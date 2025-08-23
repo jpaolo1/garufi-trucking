@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Garufi Trucking Corp | Reliable Regional Freight</title>
+  <meta name="description" content="Garufi Trucking Corp — dependable regional LTL/FTL freight across the Northeast. Fast quotes, on‑time delivery, safety‑first operations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220;          /* deep navy */
+      --card:#101827;        /* panel bg */
+      --muted:#8aa0b8;       /* muted text */
+      --text:#e6eef8;        /* primary text */
+      --accent:#22c55e;      /* green (ODFL‑inspired) */
+      --accent-2:#38bdf8;    /* cyan */
+      --line:#1e293b;
+      --shadow:0 10px 30px rgba(2,6,23,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 800px at 80% -10%,rgba(34,197,94,.10),transparent 60%),radial-gradient(900px 700px at -10% 20%,rgba(56,189,248,.12),transparent 50%),var(--bg);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1200px;margin-inline:auto;padding:0 20px}
+
+    /* NAV */
+    header{position:sticky;top:0;z-index:30;background:rgba(11,18,32,.6);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid rgba(148,163,184,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#16a34a);display:grid;place-items:center;box-shadow:var(--shadow)}
+    .logo svg{width:22px;height:22px;fill:white}
+    .brand h1{font-size:18px;letter-spacing:.2px;margin:0;font-weight:800}
+    nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+    nav a{font-weight:600;color:#cbd5e1}
+    nav a:hover{color:white}
+    .cta-btn{background:linear-gradient(135deg,var(--accent),#16a34a);color:#07131f;padding:10px 14px;border-radius:12px;font-weight:800;box-shadow:var(--shadow)}
+
+    /* HERO */
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?q=80&w=2000&auto=format&fit=crop') center/cover;opacity:.25;filter:saturate(0.9) contrast(1.1)}
+    .hero .wrap{position:relative;padding:72px 0 88px;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .hero h2{font-size:48px;line-height:1.05;margin:0 0 14px;font-weight:900;letter-spacing:.3px}
+    .hero p{font-size:18px;color:#cbd5e1;margin:0 0 28px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+    .badge{border:1px solid rgba(148,163,184,.25);padding:8px 10px;border-radius:10px;color:#d1e3f6;background:rgba(15,23,42,.5)}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;font-weight:700}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),#16a34a);color:#05101a;box-shadow:var(--shadow)}
+    .btn-ghost{border:1px solid rgba(148,163,184,.25);color:#e2e8f0;background:rgba(15,23,42,.4)}
+    .stat-card{background:linear-gradient(180deg,rgba(15,23,42,.8),rgba(2,6,23,.8));border:1px solid rgba(148,163,184,.15);padding:18px;border-radius:16px;display:grid;gap:6px}
+    .stat-card .k{font-size:28px;font-weight:900}
+
+    /* SECTIONS */
+    section{padding:64px 0;border-top:1px solid rgba(148,163,184,.08)}
+    h3.section-title{font-size:32px;margin:0 0 8px}
+    p.section-lead{color:#cbd5e1;margin:0 0 28px}
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .card{background:linear-gradient(180deg,rgba(15,23,42,.65),rgba(2,6,23,.65));border:1px solid rgba(148,163,184,.12);border-radius:16px;padding:18px}
+    .card h4{margin:0 0 6px}
+    .card p{color:#cbd5e1;margin:0}
+    .icon{width:22px;height:22px}
+    .list{display:grid;gap:8px}
+    .list li{display:flex;gap:10px;align-items:flex-start}
+    .list svg{margin-top:2px}
+
+    /* QUOTE */
+    .quote{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .form{display:grid;gap:10px}
+    input,select,textarea{width:100%;background:#0b1324;color:#e5edf7;border:1px solid rgba(148,163,184,.25);border-radius:12px;padding:12px}
+    label{font-weight:600;color:#dbeafe}
+    textarea{min-height:110px}
+    .submit{cursor:pointer}
+
+    /* FOOTER */
+    footer{padding:36px 0;border-top:1px solid rgba(148,163,184,.08);color:#cbd5e1}
+    .foot-grid{display:grid;grid-template-columns:1.1fr .9fr .9fr 1.1fr;gap:18px}
+    .foot-grid h5{margin:0 0 10px;color:#e6eef8}
+    .foot-grid a{color:#cbd5e1}
+    .legal{opacity:.8;margin-top:18px}
+
+    /* UTIL */
+    .tag{display:inline-block;border:1px solid rgba(148,163,184,.25);padding:6px 8px;border-radius:10px;margin:6px 6px 0 0;color:#d9eaf7}
+
+    /* RESPONSIVE */
+    .nav-toggle{display:none}
+    @media (max-width: 980px){
+      .hero .wrap{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .quote{grid-template-columns:1fr}
+      .foot-grid{grid-template-columns:1fr 1fr}
+      nav ul{display:none;position:absolute;top:56px;right:20px;background:#0b1324;border:1px solid rgba(148,163,184,.2);padding:12px;border-radius:12px;box-shadow:var(--shadow)}
+      nav ul.open{display:grid}
+      .nav-toggle{display:inline-flex;border:1px solid rgba(148,163,184,.25);border-radius:10px;padding:8px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 13h14l-3 4h7l-6 6H9l3-4H5l-2 3H0l3-9z"/></svg>
+        </div>
+        <h1>Garufi Trucking Corp</h1>
+      </div>
+      <nav>
+        <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+          <li><a href="#fleet">Fleet</a></li>
+          <li><a href="#safety">Safety</a></li>
+          <li><a href="#contact" class="cta-btn">Get a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container wrap">
+        <div>
+          <h2>Reliable Regional Freight<br>— Northeast Specialists</h2>
+          <p>On‑time, safety‑first delivery for shippers who value communication and consistency. Family‑run service with enterprise‑grade standards.</p>
+          <div class="badges">
+            <span class="badge">24/7 Dispatch</span>
+            <span class="badge">FMCSA Compliant</span>
+            <span class="badge">Fully Insured</span>
+            <span class="badge">EDI / API Ready</span>
+          </div>
+          <div class="actions">
+            <a href="#quote" class="btn btn-primary">Request a Quote</a>
+            <a href="tel:+1-845-555-0134" class="btn btn-ghost">Call Dispatch</a>
+          </div>
+        </div>
+        <div class="grid grid-2">
+          <div class="stat-card">
+            <div class="k">99.1%</div>
+            <div>On‑time performance (rolling 12m)</div>
+          </div>
+          <div class="stat-card">
+            <div class="k">250+</div>
+            <div>Active shipper partners</div>
+          </div>
+          <div class="stat-card">
+            <div class="k">1.2M+</div>
+            <div>Miles driven without DOT incident</div>
+          </div>
+          <div class="stat-card">
+            <div class="k"><span aria-label="less than">&lt;</span>45 min</div>
+            <div>Average quote turnaround</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container">
+      <h3 class="section-title">Services</h3>
+      <p class="section-lead">LTL, FTL, and expedited freight with transparent pricing and proactive updates.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>Regional LTL</h4>
+          <p>Optimized multi‑stop routes across NY / NJ / CT / MA to keep your freight moving without paying for unused capacity.</p>
+        </div>
+        <div class="card">
+          <h4>Full Truckload (FTL)</h4>
+          <p>Dedicated point‑to‑point coverage for time‑sensitive or high‑value shipments with GPS tracking.</p>
+        </div>
+        <div class="card">
+          <h4>Expedited & Same‑Day</h4>
+          <p>Hot‑shot solutions when the clock is tight. Direct lanes and rapid dispatch.</p>
+        </div>
+        <div class="card">
+          <h4>Liftgate & Residential</h4>
+          <p>Final‑mile deliveries with liftgate, appointment setting, and white‑glove options.</p>
+        </div>
+        <div class="card">
+          <h4>Dock to Dock</h4>
+          <p>Standard palletized freight with efficient pickup windows and flexible scheduling.</p>
+        </div>
+        <div class="card">
+          <h4>Warehousing</h4>
+          <p>Short‑term storage and cross‑dock in the Hudson Valley (ask about capacity and rates).</p>
+        </div>
+      </div>
+      <div style="margin-top:14px">
+        <span class="tag">Northeast Corridor</span>
+        <span class="tag">EDI / API</span>
+        <span class="tag">Real‑time GPS</span>
+        <span class="tag">Insurance Certificates on Request</span>
+      </div>
+    </section>
+
+    <!-- COVERAGE -->
+    <section id="coverage" class="container">
+      <h3 class="section-title">Coverage Area</h3>
+      <p class="section-lead">Primary lanes across the Northeast with flexible out‑of‑area runs upon request.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Core States</h4>
+          <ul class="list">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>New York, New Jersey, Connecticut, Massachusetts, Pennsylvania</div>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>Daily presence in NYC metro and Hudson Valley</div>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>Drop trailer options for high‑volume shippers</div>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Typical Freight</h4>
+          <ul class="list">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>Palletized consumer goods, packaging, building materials</div>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>Non‑hazmat chemicals, equipment, and components</div>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div>Temperature‑stable (no reefer) — inquire for constraints</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLEET -->
+    <section id="fleet" class="container">
+      <h3 class="section-title">Fleet</h3>
+      <p class="section-lead">Well‑maintained tractors and box trucks with telematics and real‑time tracking.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>Tractors</h4>
+          <p>Late‑model day cabs with strict maintenance intervals and safety tech.</p>
+        </div>
+        <div class="card">
+          <h4>53' Dry Vans</h4>
+          <p>Logistics posts, load bars, and e‑track available on request.</p>
+        </div>
+        <div class="card">
+          <h4>26' Box Trucks</h4>
+          <p>Liftgate and pallet jack for final‑mile and urban deliveries.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAFETY -->
+    <section id="safety" class="container">
+      <h3 class="section-title">Safety & Compliance</h3>
+      <p class="section-lead">DOT compliant drivers, documented inspections, and continuous training.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>FMCSA Compliance</h4>
+          <p>Active authority, clean CSA scores, and insurance certificates on request.</p>
+        </div>
+        <div class="card">
+          <h4>Driver Training</h4>
+          <p>Quarterly safety refreshers and ride‑alongs to reinforce best practices.</p>
+        </div>
+        <div class="card">
+          <h4>Equipment Care</h4>
+          <p>Preventive maintenance program with telematics‑driven alerts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE / CONTACT -->
+    <section id="quote" class="container">
+      <h3 class="section-title">Request a Quote</h3>
+      <p class="section-lead">Share a few details and dispatch will get back to you quickly.</p>
+      <div class="quote">
+        <form class="card form" action="https://formspree.io/f/your-endpoint" method="POST">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="grid grid-2">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" required>
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="(845) 555‑0134">
+            </div>
+          </div>
+          <div class="grid grid-2">
+            <div>
+              <label for="pickup">Pickup ZIP</label>
+              <input id="pickup" name="pickup" placeholder="12533" required>
+            </div>
+            <div>
+              <label for="drop">Drop ZIP</label>
+              <input id="drop" name="drop" placeholder="10001" required>
+            </div>
+          </div>
+          <div class="grid grid-2">
+            <div>
+              <label for="weight">Weight (lbs)</label>
+              <input id="weight" name="weight" type="number" min="1" step="1" placeholder="2000" required>
+            </div>
+            <div>
+              <label for="service">Service</label>
+              <select id="service" name="service">
+                <option>Regional LTL</option>
+                <option>FTL</option>
+                <option>Expedited</option>
+                <option>Liftgate / Residential</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="details">Details</label>
+            <textarea id="details" name="details" placeholder="Pallet count, commodity, accessorials, ready date..."></textarea>
+          </div>
+          <button class="btn btn-primary submit" type="submit">Send Request</button>
+          <small style="color:#9fb4cc">By submitting, you agree to be contacted about your quote.</small>
+        </form>
+        <div class="card">
+          <h4>Contact</h4>
+          <p style="margin:10px 0 2px">Dispatch</p>
+          <p><a href="tel:+1-845-555-0134">(845) 555‑0134</a> · <a href="mailto:dispatch@garufitrucking.com">dispatch@garufitrucking.com</a></p>
+          <p style="margin:14px 0 2px">Office</p>
+          <p>Hopewell Junction, NY · Mon–Fri 7:00a–6:00p</p>
+          <p style="margin:16px 0 10px">Shipper resources</p>
+          <ul class="list">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="#" aria-label="Insurance Certificate">Insurance Certificate (COI) — request</a>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="#" aria-label="W-9 Form">W‑9 (PDF)</a>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="#" aria-label="Track Shipment">Track Shipment</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="container">
+      <h3 class="section-title">What Shippers Say</h3>
+      <div class="grid grid-3">
+        <div class="card"><p>“Garufi is our go‑to for Hudson Valley lanes. They communicate and they deliver.”<br><small>— Ops Manager, Packaging Co.</small></p></div>
+        <div class="card"><p>“Fast quotes, clean equipment, professional drivers. Exactly what we need.”<br><small>— DC Lead, Building Materials</small></p></div>
+        <div class="card"><p>“They rescued a hot load on short notice and kept us updated the entire way.”<br><small>— Logistics Coordinator, CPG</small></p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot-grid">
+      <div>
+        <div class="brand" style="margin-bottom:10px">
+          <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 13h14l-3 4h7l-6 6H9l3-4H5l-2 3H0l3-9z"/></svg></div>
+          <h1>Garufi Trucking Corp</h1>
+        </div>
+        <p style="color:#cbd5e1">Family‑run carrier providing dependable regional freight across the Northeast corridor.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#services">Services</a><br>
+        <a href="#coverage">Coverage</a><br>
+        <a href="#fleet">Fleet</a><br>
+        <a href="#safety">Safety</a>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <a href="#">COI Request</a><br>
+        <a href="#">W‑9 (PDF)</a><br>
+        <a href="#">Track Shipment</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="mailto:dispatch@garufitrucking.com">dispatch@garufitrucking.com</a><br>
+        <a href="tel:+1-845-555-0134">(845) 555‑0134</a>
+        <p class="legal">© <span id="year"></span> Garufi Trucking Corp. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
