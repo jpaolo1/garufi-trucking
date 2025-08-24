@@ -1,0 +1,314 @@
+/* === Garufi Trucking Corp - Main Stylesheet === */
+
+/* Import the Google Fonts in CSS as fallback (if needed) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:wght@600&display=swap');
+
+:root {
+  /* Brand Color Palette */
+  --color-red: #c0262c;       /* GTC Red (primary accent) */
+  --color-gray: #5f6a7d;      /* GTC Gray (text or secondary background) */
+  --color-lightgray: #f4f4f4; /* Light gray for section backgrounds */
+  --color-black: #222222;     /* Dark text color */
+  --color-white: #ffffff;
+  --max-width: 1200px;
+  --transition: 0.3s ease;
+}
+
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3 {
+  font-family: 'Source Serif 4', serif;
+  color: var(--color-black);
+  margin-bottom: 0.5em;
+}
+h1.site-name {
+  font-size: 1.5rem;
+  color: var(--color-red);
+}
+h1.site-name span {
+  color: var(--color-black);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 0.25em;
+}
+h2 {
+  font-size: 1.75rem;
+  margin-top: 0;
+}
+h3 {
+  font-size: 1.2rem;
+}
+p {
+  margin-bottom: 1em;
+}
+a {
+  color: var(--color-red);
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header & Navigation */
+.site-header {
+  background: var(--color-white);
+  border-bottom: 2px solid var(--color-lightgray);
+  padding: 0.5rem 0;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  max-height: 50px;
+  margin-right: 0.5rem;
+}
+.logo .site-name {
+  font-size: 1.25rem;
+}
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.main-nav a {
+  font-weight: 600;
+}
+#nav-toggle {
+  display: none; /* hidden by default, shown on mobile */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+#nav-toggle:focus {
+  outline: 2px solid var(--color-red);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url('images/hero-truck.jpg') center/cover no-repeat;
+  color: var(--color-white);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); /* dark overlay for readability */
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+.tagline {
+  font-size: 2rem;
+  font-family: 'Source Serif 4', serif;
+  margin-bottom: 0.5rem;
+}
+.hero-text {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+.btn.cta-btn {
+  display: inline-block;
+  background: var(--color-red);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  transition: background-color var(--transition);
+}
+.btn.cta-btn:hover, .btn.cta-btn:focus {
+  background: #a02125; /* darker red on hover */
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* Services Section */
+.services-section {
+  background: var(--color-lightgray);
+  padding: 2rem 1rem;
+}
+.services-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.service-item {
+  background: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+.service-item h3 {
+  color: var(--color-red);
+  margin-bottom: 0.5rem;
+}
+.service-item p {
+  font-size: 0.95rem;
+}
+
+/* About Section */
+.about-section {
+  padding: 2rem 1rem;
+}
+.about-section h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.about-section p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+.about-section p em {
+  color: var(--color-red);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background: var(--color-lightgray);
+  padding: 2rem 1rem;
+}
+.testimonials-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.testimonial {
+  max-width: 600px;
+  margin: 1rem auto;
+  text-align: center;
+}
+.testimonial .quote {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.testimonial .author {
+  font-weight: 600;
+  color: var(--color-gray);
+}
+
+/* Call-to-Action (Contact) Section */
+.cta-section {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  background: var(--color-red);
+  color: var(--color-white);
+}
+.cta-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.cta-section p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+.cta-section .btn.cta-btn {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  /* Uses same .cta-btn styles defined earlier */
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-gray);
+  color: var(--color-white);
+  padding: 1.5rem 1rem;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.footer-contact h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.footer-contact p,
+.footer-credentials p,
+.footer-social p {
+  margin-bottom: 0.3rem;
+}
+.footer-credentials p {
+  font-size: 0.9rem;
+}
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 0.5rem;
+}
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive Design */
+/* Mobile-first: adjust layout for smaller screens via progressive enhancements */
+@media (max-width: 768px) {
+  .main-nav ul {
+    position: absolute;
+    top: 60px; right: 1rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-lightgray);
+    padding: 1rem;
+    display: none;        /* hidden until toggled */
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .main-nav ul.open {
+    display: flex;        /* show menu when toggled */
+  }
+  #nav-toggle {
+    display: block;       /* show hamburger icon */
+  }
+  .services-grid {
+    grid-template-columns: 1fr; /* single column grid on narrow screens */
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
