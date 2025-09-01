@@ -1,150 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Garufi Trucking Corp – Reliable Regional Freight Carrier offering LTL, FTL, and Expedited trucking services in the NY/NJ/CT area."/>
-  <meta property="og:title" content="Garufi Trucking Corp – Regional Freight Services" />
-  <meta property="og:description" content="Family-owned trucking company providing LTL, FTL, Expedited, Warehousing and Dedicated Route services with over 25 years of safe, on-time deliveries."/>
-  <!-- TODO: Add og:image when available, e.g., <meta property="og:image" content="http://yourdomain.com/og-image.jpg" /> -->
-  <title>Garufi Trucking Corp | Freight & Logistics NY</title>
-  <!-- Google Fonts: Inter (sans-serif) and Source Serif 4 (serif for headings) -->
+  <title>Garufi Trucking Corp</title>
+  <meta name="description" content="Elevate Your Shipping Experience with Garufi Trucking Corp." />
+  <!-- Font pairing to match the look in your screenshots (rounded geometric headings + clean body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:wght@600&display=swap">
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <!-- Main Stylesheet -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header / Navigation -->
+  <!-- ===========================
+       HEADER (logo left / Contact / hamburger)
+       =========================== -->
   <header class="site-header">
-    <div class="container nav-container">
-      <!-- Logo and Brand Name -->
-      <div class="logo">
-        <!-- Upload your logo image here -->
-        <!-- <img src="images/logo.png" alt="GTC Logo" /> -->
-        <h1 class="site-name">GTC <span>Garufi Trucking Corp</span></h1>
-      </div>
-      <!-- Navigation Menu -->
-      <nav class="main-nav">
-        <ul id="menu-list">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <!-- Mobile Nav Toggle (hamburger) -->
-        <button id="nav-toggle" aria-label="Toggle Navigation">&#9776;</button>
+    <div class="wrap header-row">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Garufi Trucking<br>Corp</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link" href="#contact">Contact</a>
+        <!-- purely decorative on desktop; no JS required -->
+        <button class="hamburger" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" role="banner" aria-label="Hero section with tagline and call to action">
-    <div class="overlay"><!-- dark overlay for contrast over background --></div>
-    <div class="container hero-content">
-      <h2 class="tagline">Reliable Freight Solutions, Delivered On Time</h2>
-      <p class="hero-text">Serving New York, New Jersey & Connecticut with safe, on‑time deliveries for over 25 years.</p>
-      <a href="#contact" class="btn cta-btn">Request a Quote</a>
-    </div>
-    <!-- Hero background image via CSS (see style.css) -->
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="services-section container">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service-item">
-        <h3>LTL Freight</h3>
-        <p>Cost-effective <strong>LTL (Less-Than-Truckload)</strong> shipping for smaller loads, with consolidation and frequent departures to keep your supply chain moving.</p>
+  <main>
+    <!-- ===========================
+         HERO (left text / right truck image)
+         =========================== -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>
+            Elevate Your<br>
+            Shipping Experience<br>
+            with Garufi Trucking<br>
+            Corp
+          </h1>
+        </div>
+        <div class="hero-media">
+          <!-- Replace with your hero image if desired -->
+          <img src="https://images.unsplash.com/photo-1543465077-db45d34b88b5?q=80&w=1600&auto=format&fit=crop" alt="Freight truck front view">
+        </div>
       </div>
-      <div class="service-item">
-        <h3>FTL Freight</h3>
-        <p><strong>Full Truckload</strong> transportation dedicated to your shipment. We provide door-to-door service with timely pickups and deliveries across the region.</p>
-      </div>
-      <div class="service-item">
-        <h3>Expedited Delivery</h3>
-        <p>Time-sensitive freight solutions. Our <strong>expedited</strong> service ensures urgent shipments reach their destination safely and on schedule, every time.</p>
-      </div>
-      <div class="service-item">
-        <h3>Warehousing</h3>
-        <p>Short-term <strong>warehousing</strong> and cross-docking options to help you manage overflow inventory and streamline distribution without long-term commitments.</p>
-      </div>
-      <div class="service-item">
-        <h3>Dedicated Routes</h3>
-        <p>Reliable <strong>dedicated route</strong> services for clients with regular shipping needs. We become an extension of your business, handling repeat deliveries with consistency.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="about-section container">
-    <h2>About GTC</h2>
-    <p><strong>Garufi Trucking Corp (GTC)</strong> is a family-owned trucking company based in Hopewell Junction, NY, with roots dating back to 2000. For over two decades, we’ve built our reputation on <em>personalized service</em> and a commitment to <em>“on-time, every time”</em> delivery performance. Our team of professional drivers and staff treat every load with care – whether it’s a single pallet or a full truckload – because we know our customers depend on us.</p>
-    <p>As a **licensed and insured** carrier (US DOT <strong>860985</strong>, MC <strong>674156</strong>), we operate a modern fleet across the Northeast. GTC prides itself on being large enough to handle complex logistics needs, yet small enough to offer the <strong>flexibility and personal attention</strong> you deserve. From our humble start with one truck, GTC has grown through <strong>hard work, integrity, and reliable service</strong> – values that continue to drive us today.</p>
-    <p>When you partner with GTC, you’re more than a customer – you’re part of the family. Let us put our <strong>25+ years of experience</strong> to work for your business, delivering your freight safely and efficiently every step of the way.</p>
-  </section>
+    <!-- ===========================
+         SPLIT CTA (left copy/button / right road image)
+         =========================== -->
+    <section class="split-cta">
+      <div class="wrap split-grid">
+        <div class="split-copy">
+          <p class="lead">Discover GTC’s commitment to reliable logistics solutions.</p>
+          <a class="btn" href="#quote">Get Quote</a>
+        </div>
+        <div class="split-media">
+          <img src="https://images.unsplash.com/photo-1544829081-8e207eccca5f?q=80&w=1600&auto=format&fit=crop" alt="Truck wheels on highway at dusk">
+        </div>
+      </div>
+    </section>
 
-  <!-- Testimonials Section (or Trust Badges) -->
-  <section class="testimonials-section container" aria-labelledby="client-feedback">
-    <h2 id="client-feedback">Customer Testimonials</h2>
-    <div class="testimonial">
-      <p class="quote">“GTC has been a game changer for our distribution. Their team is responsive and our deliveries always arrive on time. We trust them with all our regional shipments!”</p>
-      <p class="author">– John D., Operations Manager, Manufacturing Co.</p>
-    </div>
-    <div class="testimonial">
-      <p class="quote">“As a small business, we appreciate GTC’s personal touch. They handled our LTL shipments with care and even helped us navigate scheduling during a busy season. Highly recommend their service.”</p>
-      <p class="author">– Sarah K., Owner, Retail Supply</p>
-    </div>
-    <!-- (Alternatively, we could place trust badges or partner logos here in lieu of quotes) -->
-  </section>
+    <!-- ===========================
+         BLOG (title + 3 article cards)
+         =========================== -->
+    <section class="blog" id="blog">
+      <div class="wrap">
+        <h2 class="section-title">Blog</h2>
 
-  <!-- Call-to-Action Section -->
-  <section id="contact" class="cta-section container" aria-label="Call to action - request a quote">
-    <h2>Ready to Get Started?</h2>
-    <p>Contact our team today to request a freight quote or learn more about our services. We’re here to help 24/7 and look forward to serving your transportation needs.</p>
-    <a href="mailto:info@garufitrucking.com" class="btn cta-btn">📞 Request a Quote</a>
-    <!-- Alternatively, a contact form can be included:
-    <form action="#" method="post">
-      <label for="name">Name:</label><input type="text" id="name" name="name" required />
-      <label for="email">Email:</label><input type="email" id="email" name="email" required />
-      <label for="message">Your Request:</label><textarea id="message" name="message" rows="4"></textarea>
-      <button type="submit">Send Request</button>
-    </form>
-    (The form is commented out for now, since backend processing is not available on static GitHub Pages.)
-    -->
-  </section>
+        <div class="blog-grid">
+          <!-- Card 1 -->
+          <article class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?q=80&w=1400&auto=format&fit=crop" alt="">
+            <div class="card-overlay">
+              <div class="card-author">Joseph Paolo</div>
+              <h3 class="card-title">Requesting Quotes Made Easy with Gar...</h3>
+              <div class="card-meta">
+                <span class="eye">0</span>
+                <span class="heart"></span>
+              </div>
+            </div>
+          </article>
 
-  <!-- Footer Section -->
+          <!-- Card 2 -->
+          <article class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1594489559288-50c9f1a33d84?q=80&w=1400&auto=format&fit=crop" alt="">
+            <div class="card-overlay">
+              <div class="card-author">Joseph Paolo</div>
+              <h3 class="card-title">Innovating Logistics: GTC's AI-Driven...</h3>
+              <div class="card-meta">
+                <span class="eye">0</span>
+                <span class="heart"></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <img class="card-img" src="https://images.unsplash.com/photo-1550376026-8c1b5b8e7f82?q=80&w=1400&auto=format&fit=crop" alt="">
+            <div class="card-overlay">
+              <div class="card-author">Joseph Paolo</div>
+              <h3 class="card-title">Understanding Freight Services in Hudson Vall...</h3>
+              <div class="card-meta">
+                <span class="eye">0</span>
+                <span class="heart"></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         SERVICES (stacked rows: image left / copy right)
+         =========================== -->
+    <section class="services" id="services">
+      <div class="wrap">
+        <h2 class="section-title">Services</h2>
+
+        <!-- Row 1 -->
+        <div class="service-row">
+          <div class="service-media">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" alt="Analytics dashboard on laptop">
+          </div>
+          <div class="service-copy">
+            <h3>Predictive Analytics Training</h3>
+            <p class="price">$300</p>
+            <a class="btn" href="#course">View Course</a>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="service-row">
+          <div class="service-media">
+            <img src="https://images.unsplash.com/photo-1533557950217-238fc2f0d707?q=80&w=1600&auto=format&fit=crop" alt="White fleet of trucks in yard">
+          </div>
+          <div class="service-copy">
+            <h3>Logistics Consultation</h3>
+            <p class="price">$200</p>
+            <a class="btn" href="#book">Book Now</a>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="service-row">
+          <div class="service-media">
+            <img src="https://images.unsplash.com/photo-1519178614-0b4b1ddb9bea?q=80&w=1600&auto=format&fit=crop" alt="Stacked shipping containers">
+          </div>
+          <div class="service-copy">
+            <h3>Freight Delivery</h3>
+            <p class="price">$500</p>
+            <a class="btn" href="#book">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         OUR STORY (image left / text + button right)
+         =========================== -->
+    <section class="story" id="story">
+      <div class="wrap story-grid">
+        <div class="story-media">
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1400&auto=format&fit=crop" alt="Smiling truck driver">
+        </div>
+        <div class="story-copy">
+          <h2 class="section-title">Our Story</h2>
+          <p>Garufi Trucking Corp is a family-owned logistics company focused on delivering quality services.</p>
+          <p>Serving New York, New Jersey, and Connecticut, we leverage AI to enhance logistics.</p>
+          <a class="btn" href="#learn">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         CLIENT FEEDBACK (3 rows)
+         =========================== -->
+    <section class="feedback" id="testimonials">
+      <div class="wrap">
+        <h2 class="section-title">Client Feedback</h2>
+
+        <div class="fb-row">
+          <div class="fb-label">Carlos</div>
+          <div class="fb-name">Carlos Reyes</div>
+          <div class="fb-quote">Reliable and efficient, GTC is our go-to trucking partner.</div>
+        </div>
+
+        <div class="fb-row">
+          <div class="fb-label">Tina</div>
+          <div class="fb-name">Tina Thompson</div>
+          <div class="fb-quote">Their real-time tracking is a game changer for our shipments.</div>
+        </div>
+
+        <div class="fb-row">
+          <div class="fb-label">Alex</div>
+          <div class="fb-name">Alex Brown</div>
+          <div class="fb-quote">I highly recommend Garufi Trucking for any logistics needs.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         FOLLOW US (5 square tiles)
+         =========================== -->
+    <section class="follow" id="follow">
+      <div class="wrap">
+        <h2 class="section-title">Follow Us</h2>
+        <div class="follow-grid">
+          <a class="tile" href="#"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt=""></a>
+          <a class="tile badge-video" href="#"><img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=800&auto=format&fit=crop" alt=""></a>
+          <a class="tile" href="#"><img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop" alt=""></a>
+          <a class="tile badge-shop" href="#"><img src="https://images.unsplash.com/photo-1585386959984-a4155223160c?q=80&w=800&auto=format&fit=crop" alt=""></a>
+          <a class="tile" href="#"><img src="https://images.unsplash.com/photo-1543109740-4d9baf8b8f54?q=80&w=800&auto=format&fit=crop" alt=""></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===========================
+       FOOTER (giant brand name + copyright)
+       =========================== -->
   <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-contact">
-        <h3>Garufi Trucking Corp</h3>
-        <p>18 Pine Ridge Dr, Hopewell Jct, NY 12533</p>
-        <p>Phone: <a href="tel:845-896-5901">845-896-5901</a></p>
-        <p>Email: <a href="mailto:salgarufi@verizon.net">salgarufi@verizon.net</a></p>
-      </div>
-      <div class="footer-credentials">
-        <p>USDOT: <strong>860985</strong></p>
-        <p>MC: <strong>674156</strong></p>
-        <p>Fully Licensed &amp; Insured</p>
-      </div>
-      <div class="footer-social">
-        <p>Connect with us:</p>
-        <p>
-          <a href="#" aria-label="Facebook"><img src="icons/facebook.png" alt="Facebook Icon"></a>
-          <a href="#" aria-label="LinkedIn"><img src="icons/linkedin.png" alt="LinkedIn Icon"></a>
-          <!-- Add actual social profile links/icons as needed -->
-        </p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Garufi Trucking Corp. All rights reserved.</p>
+    <div class="wrap">
+      <div class="footer-brand">GARUFI TRUCKING CORP</div>
+      <p class="legal">© 2035 by Garufi Trucking Corp. Powered and secured by Wix</p>
     </div>
   </footer>
 
-  <!-- Optional JavaScript for mobile menu toggle -->
-  <script src="script.js"></script>
+  <!-- Visual-only floating chat bubble (no JS) -->
+  <a class="chat" href="#contact" aria-label="Open chat">
+    <span class="bubble">Let’s Chat!</span>
+  </a>
 </body>
 </html>
