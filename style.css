@@ -4,7 +4,7 @@
 
 :root {
   /* Brand Color Palette */
-  --color-red: #c0262c;       /* GTC Red (primary accent) */
+  --color-blue: #0d65b5;      /* GTC Blue (primary accent) */
   --color-gray: #5f6a7d;      /* GTC Gray (text or secondary background) */
   --color-lightgray: #f4f4f4; /* Light gray for section backgrounds */
   --color-black: #222222;     /* Dark text color */
@@ -33,7 +33,7 @@ h1, h2, h3 {
 }
 h1.site-name {
   font-size: 1.5rem;
-  color: var(--color-red);
+  color: var(--color-blue);
 }
 h1.site-name span {
   color: var(--color-black);
@@ -52,7 +52,7 @@ p {
   margin-bottom: 1em;
 }
 a {
-  color: var(--color-red);
+  color: var(--color-blue);
   text-decoration: none;
 }
 a:hover, a:focus {
@@ -103,7 +103,7 @@ a:hover, a:focus {
   cursor: pointer;
 }
 #nav-toggle:focus {
-  outline: 2px solid var(--color-red);
+  outline: 2px solid var(--color-blue);
 }
 
 /* Hero Section */
@@ -137,7 +137,7 @@ a:hover, a:focus {
 }
 .btn.cta-btn {
   display: inline-block;
-  background: var(--color-red);
+  background: var(--color-blue);
   color: var(--color-white);
   padding: 0.75rem 1.5rem;
   font-weight: 600;
@@ -146,7 +146,7 @@ a:hover, a:focus {
   transition: background-color var(--transition);
 }
 .btn.cta-btn:hover, .btn.cta-btn:focus {
-  background: #a02125; /* darker red on hover */
+  background: #0b4f99; /* darker blue on hover */
   color: var(--color-white);
   text-decoration: none;
 }
@@ -172,7 +172,7 @@ a:hover, a:focus {
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 .service-item h3 {
-  color: var(--color-red);
+  color: var(--color-blue);
   margin-bottom: 0.5rem;
 }
 .service-item p {
@@ -192,7 +192,7 @@ a:hover, a:focus {
   margin-bottom: 1.2rem;
 }
 .about-section p em {
-  color: var(--color-red);
+  color: var(--color-blue);
   font-style: normal;
   font-weight: 600;
 }
@@ -224,7 +224,7 @@ a:hover, a:focus {
 .cta-section {
   padding: 2.5rem 1rem;
   text-align: center;
-  background: var(--color-red);
+  background: var(--color-blue);
   color: var(--color-white);
 }
 .cta-section h2 {
@@ -244,7 +244,7 @@ a:hover, a:focus {
 
 /* Footer */
 .site-footer {
-  background: var(--color-gray);
+  background: var(--color-black);
   color: var(--color-white);
   padding: 1.5rem 1rem;
 }
