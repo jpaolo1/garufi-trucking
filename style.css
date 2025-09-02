@@ -1,7 +1,6 @@
 /* === Garufi Trucking Corp - Main Stylesheet === */
 
-/* Import the Google Fonts in CSS as fallback (if needed) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Serif+4:wght@600&display=swap');
+/* Google Fonts are loaded via <link> tags in the HTML for better performance */
 
 :root {
   /* Brand Color Palette */
