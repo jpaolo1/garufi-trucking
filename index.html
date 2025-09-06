@@ -1,242 +1,349 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Garufi Trucking Corp</title>
-  <meta name="description" content="Elevate Your Shipping Experience with Garufi Trucking Corp." />
-  <!-- Font pairing to match the look in your screenshots (rounded geometric headings + clean body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- ===========================
-       HEADER (logo left / Contact / hamburger)
-       =========================== -->
-  <header class="site-header">
-    <div class="wrap header-row">
-      <a class="brand" href="#">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">Garufi Trucking<br>Corp</span>
-      </a>
+import React from "react";
+import { motion } from "framer-motion";
+import { Truck, MapPin, Phone, ShieldCheck, ArrowRight, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
 
-      <nav class="nav">
-        <a class="nav-link" href="#contact">Contact</a>
-        <!-- purely decorative on desktop; no JS required -->
-        <button class="hamburger" aria-label="Open menu">
-          <span></span><span></span>
-        </button>
-      </nav>
+/**
+ * Garufi Trucking Corp — Clean, professional starter site.
+ *
+ * How to use:
+ * 1) Replace LOGO_SRC below with your real logo file path or URL (PNG/SVG recommended).
+ * 2) Update the color tokens in the <style> tag to match your logo colors.
+ * 3) Replace placeholder copy with your actual services, lanes, certifications, and contact info.
+ * 4) This single component can be dropped into any React project. TailwindCSS required.
+ */
+
+const LOGO_SRC = "/garufi-logo.svg"; // TODO: point this to your actual logo file (SVG/PNG)
+
+export default function GarufiTruckingSite() {
+  return (
+    <div className="min-h-screen bg-background text-foreground" style={{fontFamily:"Inter, ui-sans-serif, system-ui"}}>
+      {/* Theming: set brand colors here to match the logo */}
+      <style>{`
+        :root {
+          /* Primary brand (e.g., deep navy or brand blue) */
+          --brand-600: #0B3A5C;
+          --brand-500: #0F4C7A;
+          --brand-400: #1C6EA4;
+          --brand-300: #5AA9E6;
+          --brand-50:  #E9F5FF;
+
+          /* Accent (e.g., safety orange or brand gold) */
+          --accent-600: #C05621;
+          --accent-500: #DD6B20;
+          --accent-400: #F6AD55;
+
+          /* Neutral surface tokens */
+          --bg: #0b1220;         /* page background */
+          --card: #0f172a;       /* cards/nav/footer */
+          --muted: #94a3b8;      /* muted text */
+          --text: #e5e7eb;       /* base text */
+          --white: #ffffff;
+        }
+        .bg-background{ background: var(--bg); }
+        .bg-card{ background: var(--card); }
+        .text-foreground{ color: var(--text); }
+        .text-muted{ color: var(--muted); }
+        .btn-primary{ background: linear-gradient(135deg, var(--brand-500), var(--brand-400)); color: var(--white); }
+        .btn-primary:hover{ filter: brightness(1.05); }
+        .btn-accent{ background: linear-gradient(135deg, var(--accent-600), var(--accent-500)); color: var(--white); }
+        .chip{ background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); }
+        .ring-brand{ box-shadow: 0 0 0 8px rgba(28,110,164,0.12); }
+        .container{ max-width: 1200px; }
+      `}</style>
+
+      {/* Top bar */}
+      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-card/70 bg-card/80 border-b border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between py-4">
+            <div className="flex items-center gap-3">
+              <img src={LOGO_SRC} alt="Garufi Trucking logo" className="h-10 w-auto" />
+              <div className="leading-tight">
+                <span className="block text-sm text-muted">Garufi Trucking Corp</span>
+                <strong className="text-lg tracking-tight" style={{color:"var(--brand-300)"}}>Delivering on Every Mile</strong>
+              </div>
+            </div>
+
+            <nav className="hidden md:flex items-center gap-8 text-sm">
+              <a href="#services" className="hover:text-[var(--brand-300)] transition-colors">Services</a>
+              <a href="#fleet" className="hover:text-[var(--brand-300)] transition-colors">Fleet</a>
+              <a href="#coverage" className="hover:text-[var(--brand-300)] transition-colors">Coverage</a>
+              <a href="#safety" className="hover:text-[var(--brand-300)] transition-colors">Safety</a>
+              <a href="#contact" className="hover:text-[var(--brand-300)] transition-colors">Contact</a>
+            </nav>
+
+            <div className="hidden md:flex items-center gap-3">
+              <a href="tel:+1-000-000-0000" className="btn-accent px-4 py-2 rounded-2xl shadow-lg shadow-black/30 flex items-center gap-2">
+                <Phone className="h-4 w-4" />
+                <span className="text-sm font-medium">(000) 000-0000</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20" aria-hidden>
+          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 800 400">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0%" stopColor="var(--brand-500)"/>
+                <stop offset="100%" stopColor="var(--brand-300)"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="400" fill="url(#g1)"/>
+            <g opacity="0.35">
+              {[...Array(16)].map((_,i)=> (
+                <circle key={i} cx={Math.random()*800} cy={Math.random()*400} r={Math.random()*80+20} fill="none" stroke="white" strokeOpacity="0.2" />
+              ))}
+            </g>
+          </svg>
+        </div>
+
+        <div className="container mx-auto px-4 pt-14 pb-20 md:pt-24 md:pb-28 relative">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.6}} className="space-y-6">
+              <div className="inline-flex items-center gap-2 chip px-3 py-1 rounded-full text-xs">
+                <ShieldCheck className="h-3.5 w-3.5 text-[var(--brand-300)]" />
+                <span className="text-muted">FMCSA-Compliant • Fully Insured • On-Time</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+                Reliable Freight Solutions
+                <span className="block text-[var(--brand-300)]">Built for Your Business</span>
+              </h1>
+              <p className="text-muted max-w-xl">
+                Garufi Trucking Corp keeps your supply chain moving with safe, efficient, and transparent trucking services.
+                From regional lanes to long-haul, we deliver the consistency your customers expect.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href="#contact" className="btn-primary px-5 py-3 rounded-2xl font-medium inline-flex items-center gap-2 shadow-lg shadow-black/30 ring-brand">
+                  Request a Quote <ArrowRight className="h-4 w-4" />
+                </a>
+                <a href="#services" className="chip px-5 py-3 rounded-2xl font-medium inline-flex items-center gap-2">
+                  Explore Services
+                </a>
+              </div>
+              <ul className="flex flex-wrap gap-6 pt-2 text-sm text-muted">
+                <li className="flex items-center gap-2"><Truck className="h-4 w-4 text-[var(--brand-300)]"/> Dry Van & Reefer</li>
+                <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-[var(--brand-300)]"/> Regional & OTR</li>
+                <li className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-[var(--brand-300)]"/> Safety-First Culture</li>
+              </ul>
+            </motion.div>
+
+            <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.6, delay:0.1}} className="relative">
+              <div className="aspect-[16/11] rounded-3xl bg-card border border-white/10 overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-500)]/30 via-transparent to-[var(--accent-600)]/20" />
+                {/* Logo showcase */}
+                <div className="w-full h-full flex flex-col items-center justify-center p-6">
+                  <img src={LOGO_SRC} alt="Garufi Trucking logo large" className="w-40 h-auto mb-4 drop-shadow-[0_8px_24px_rgba(28,110,164,0.45)]" />
+                  <p className="text-center text-sm text-muted max-w-sm">
+                    Proudly serving shippers with dependable capacity, modern equipment, and proactive communication.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="py-16 md:py-24 border-t border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="flex items-end justify-between gap-6 mb-10">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-semibold">Services</h2>
+              <p className="text-muted max-w-2xl mt-2">Capacity you can trust—tailored for your freight profile.</p>
+            </div>
+            <a href="#contact" className="hidden md:inline-flex items-center gap-2 btn-primary px-4 py-2 rounded-xl text-sm">
+              Book Capacity <ArrowRight className="h-4 w-4"/>
+            </a>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Dry Van",
+                desc: "General freight, consumer goods, packaging, and more with strict on-time performance.",
+                icon: <Truck className="h-5 w-5"/>,
+              },
+              {
+                title: "Refrigerated",
+                desc: "Temperature-controlled shipments with continuous monitoring and food safety best practices.",
+                icon: <ShieldCheck className="h-5 w-5"/>,
+              },
+              {
+                title: "Expedited",
+                desc: "When the clock matters—priority dispatch and team service options.",
+                icon: <ArrowRight className="h-5 w-5"/>,
+              },
+            ].map((card, idx) => (
+              <motion.div key={card.title}
+                initial={{opacity:0, y:16}} whileInView={{opacity:1, y:0}} viewport={{once:true}}
+                transition={{duration:0.5, delay:idx*0.05}}
+                className="bg-card border border-white/10 rounded-3xl p-6 shadow-xl">
+                <div className="flex items-center justify-between">
+                  <div className="text-[var(--brand-300)]">{card.icon}</div>
+                  <span className="text-xs chip px-2 py-1 rounded-full">On-Time</span>
+                </div>
+                <h3 className="text-lg font-semibold mt-4">{card.title}</h3>
+                <p className="text-muted mt-2 text-sm">{card.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Fleet */}
+      <section id="fleet" className="py-16 md:py-24 border-t border-white/10">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-semibold">Modern Fleet</h2>
+          <p className="text-muted mt-2 max-w-2xl">Newer model tractors and well-maintained trailers for reliability, fuel efficiency, and driver comfort.</p>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
+            {[
+              { label: "Average Tractor Age", value: "< 4 years" },
+              { label: "Trailer Types", value: "53' Dry Van, Reefer" },
+              { label: "Telematics", value: "GPS, ELD, Temp Monitoring" },
+            ].map((item) => (
+              <div key={item.label} className="bg-card border border-white/10 rounded-2xl p-5">
+                <div className="text-sm text-muted">{item.label}</div>
+                <div className="text-xl font-semibold mt-1" style={{color:"var(--brand-300)"}}>{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Coverage */}
+      <section id="coverage" className="py-16 md:py-24 border-t border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-semibold">Coverage & Lanes</h2>
+              <p className="text-muted mt-2">Primary coverage across the Northeast, Mid-Atlantic, and Midwest with dedicated options available.</p>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-[var(--brand-300)]"/> NY ↔ NJ ↔ PA</li>
+                <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-[var(--brand-300)]"/> MA ↔ CT ↔ RI</li>
+                <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-[var(--brand-300)]"/> OH ↔ MI ↔ IL</li>
+              </ul>
+            </div>
+            <div className="rounded-3xl bg-card border border-white/10 p-4">
+              {/* Placeholder map image — swap in your own */}
+              <div className="aspect-[16/10] rounded-2xl overflow-hidden relative">
+                <img src="https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1400&auto=format&fit=crop" alt="Highway at dusk" className="w-full h-full object-cover opacity-90"/>
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-[var(--brand-500)]/30"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Safety & Compliance */}
+      <section id="safety" className="py-16 md:py-24 border-t border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: "FMCSA Compliance", desc: "Strict adherence to HOS, ELD, pre-trip/post-trip inspections, and audit readiness." },
+              { title: "Driver Training", desc: "Ongoing safety training and performance coaching to reduce incidents." },
+              { title: "Maintenance", desc: "Scheduled preventative maintenance with detailed records and inspections." },
+            ].map((item) => (
+              <div key={item.title} className="bg-card border border-white/10 rounded-2xl p-6">
+                <h3 className="font-semibold">{item.title}</h3>
+                <p className="text-muted text-sm mt-2">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-16 md:py-24 border-t border-white/10">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-semibold">Let’s Move Freight</h2>
+              <p className="text-muted mt-2">Tell us about your lanes, volume, and requirements. We’ll reply quickly with capacity and pricing options.</p>
+
+              <div className="mt-6 space-y-3 text-sm">
+                <a href="tel:+1-000-000-0000" className="flex items-center gap-3 chip px-4 py-3 rounded-xl w-fit">
+                  <Phone className="h-4 w-4 text-[var(--brand-300)]"/> (000) 000-0000
+                </a>
+                <a href="mailto:dispatch@garufi.example" className="flex items-center gap-3 chip px-4 py-3 rounded-xl w-fit">
+                  <Mail className="h-4 w-4 text-[var(--brand-300)]"/> dispatch@garufi.example
+                </a>
+              </div>
+
+              <div className="flex gap-3 mt-6">
+                <a href="#" className="chip p-2 rounded-xl" aria-label="Facebook"><Facebook className="h-4 w-4"/></a>
+                <a href="#" className="chip p-2 rounded-xl" aria-label="Instagram"><Instagram className="h-4 w-4"/></a>
+                <a href="#" className="chip p-2 rounded-xl" aria-label="LinkedIn"><Linkedin className="h-4 w-4"/></a>
+              </div>
+            </div>
+
+            <form onSubmit={(e)=>e.preventDefault()} className="bg-card border border-white/10 rounded-3xl p-6 shadow-xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-sm text-muted">Name</label>
+                  <input className="mt-1 w-full px-3 py-2 rounded-xl bg-black/20 border border-white/10 outline-none focus:ring-2 focus:ring-[var(--brand-400)]" placeholder="Your name"/>
+                </div>
+                <div>
+                  <label className="text-sm text-muted">Company</label>
+                  <input className="mt-1 w-full px-3 py-2 rounded-xl bg-black/20 border border-white/10 outline-none focus:ring-2 focus:ring-[var(--brand-400)]" placeholder="Company name"/>
+                </div>
+                <div>
+                  <label className="text-sm text-muted">Email</label>
+                  <input type="email" className="mt-1 w-full px-3 py-2 rounded-xl bg-black/20 border border-white/10 outline-none focus:ring-2 focus:ring-[var(--brand-400)]" placeholder="you@company.com"/>
+                </div>
+                <div>
+                  <label className="text-sm text-muted">Phone</label>
+                  <input className="mt-1 w-full px-3 py-2 rounded-xl bg-black/20 border border-white/10 outline-none focus:ring-2 focus:ring-[var(--brand-400)]" placeholder="(555) 555-5555"/>
+                </div>
+                <div className="md:col-span-2">
+                  <label className="text-sm text-muted">What are you shipping?</label>
+                  <textarea rows={4} className="mt-1 w-full px-3 py-2 rounded-xl bg-black/20 border border-white/10 outline-none focus:ring-2 focus:ring-[var(--brand-400)]" placeholder="Freight details, lanes, cadence..."/>
+                </div>
+              </div>
+              <button className="mt-4 btn-primary w-full px-4 py-3 rounded-2xl font-medium inline-flex items-center justify-center gap-2">
+                Send Request <ArrowRight className="h-4 w-4"/>
+              </button>
+              <p className="text-[11px] text-muted mt-2">By submitting, you agree to be contacted about your inquiry.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-card border-t border-white/10">
+        <div className="container mx-auto px-4 py-10">
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div className="flex items-center gap-3">
+              <img src={LOGO_SRC} alt="Garufi Trucking logo" className="h-10 w-auto" />
+              <div className="leading-tight">
+                <strong className="block">Garufi Trucking Corp</strong>
+                <span className="text-muted text-sm">Reliable • Safe • On-Time</span>
+              </div>
+            </div>
+            <div className="text-sm">
+              <div className="text-muted">USDOT / MC</div>
+              <div className="mt-1">USDOT # • MC #</div>
+              <div className="mt-3 text-muted">HQ</div>
+              <div>123 Example Ave, City, ST 00000</div>
+            </div>
+            <div className="text-sm">
+              <div className="text-muted">Contact</div>
+              <div className="mt-1">dispatch@garufi.example</div>
+              <div>(000) 000-0000</div>
+            </div>
+          </div>
+          <div className="pt-8 mt-8 border-t border-white/10 text-xs text-muted flex flex-wrap items-center justify-between gap-4">
+            <div>© {new Date().getFullYear()} Garufi Trucking Corp. All rights reserved.</div>
+            <div className="flex gap-4">
+              <a href="#" className="hover:text-[var(--brand-300)]">Privacy</a>
+              <a href="#" className="hover:text-[var(--brand-300)]">Terms</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-  </header>
-
-  <main>
-    <!-- ===========================
-         HERO (left text / right truck image)
-         =========================== -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <h1>
-            Elevate Your<br>
-            Shipping Experience<br>
-            with Garufi Trucking<br>
-            Corp
-          </h1>
-        </div>
-        <div class="hero-media">
-          <!-- Replace with your hero image if desired -->
-          <img src="https://images.unsplash.com/photo-1543465077-db45d34b88b5?q=80&w=1600&auto=format&fit=crop" alt="Freight truck front view">
-        </div>
-      </div>
-    </section>
-
-    <!-- ===========================
-         SPLIT CTA (left copy/button / right road image)
-         =========================== -->
-    <section class="split-cta">
-      <div class="wrap split-grid">
-        <div class="split-copy">
-          <p class="lead">Discover GTC’s commitment to reliable logistics solutions.</p>
-          <a class="btn" href="#quote">Get Quote</a>
-        </div>
-        <div class="split-media">
-          <img src="https://images.unsplash.com/photo-1544829081-8e207eccca5f?q=80&w=1600&auto=format&fit=crop" alt="Truck wheels on highway at dusk">
-        </div>
-      </div>
-    </section>
-
-    <!-- ===========================
-         BLOG (title + 3 article cards)
-         =========================== -->
-    <section class="blog" id="blog">
-      <div class="wrap">
-        <h2 class="section-title">Blog</h2>
-
-        <div class="blog-grid">
-          <!-- Card 1 -->
-          <article class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?q=80&w=1400&auto=format&fit=crop" alt="">
-            <div class="card-overlay">
-              <div class="card-author">Joseph Paolo</div>
-              <h3 class="card-title">Requesting Quotes Made Easy with Gar...</h3>
-              <div class="card-meta">
-                <span class="eye">0</span>
-                <span class="heart"></span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1594489559288-50c9f1a33d84?q=80&w=1400&auto=format&fit=crop" alt="">
-            <div class="card-overlay">
-              <div class="card-author">Joseph Paolo</div>
-              <h3 class="card-title">Innovating Logistics: GTC's AI-Driven...</h3>
-              <div class="card-meta">
-                <span class="eye">0</span>
-                <span class="heart"></span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="card">
-            <img class="card-img" src="https://images.unsplash.com/photo-1550376026-8c1b5b8e7f82?q=80&w=1400&auto=format&fit=crop" alt="">
-            <div class="card-overlay">
-              <div class="card-author">Joseph Paolo</div>
-              <h3 class="card-title">Understanding Freight Services in Hudson Vall...</h3>
-              <div class="card-meta">
-                <span class="eye">0</span>
-                <span class="heart"></span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===========================
-         SERVICES (stacked rows: image left / copy right)
-         =========================== -->
-    <section class="services" id="services">
-      <div class="wrap">
-        <h2 class="section-title">Services</h2>
-
-        <!-- Row 1 -->
-        <div class="service-row">
-          <div class="service-media">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" alt="Analytics dashboard on laptop">
-          </div>
-          <div class="service-copy">
-            <h3>Predictive Analytics Training</h3>
-            <p class="price">$300</p>
-            <a class="btn" href="#course">View Course</a>
-          </div>
-        </div>
-
-        <!-- Row 2 -->
-        <div class="service-row">
-          <div class="service-media">
-            <img src="https://images.unsplash.com/photo-1533557950217-238fc2f0d707?q=80&w=1600&auto=format&fit=crop" alt="White fleet of trucks in yard">
-          </div>
-          <div class="service-copy">
-            <h3>Logistics Consultation</h3>
-            <p class="price">$200</p>
-            <a class="btn" href="#book">Book Now</a>
-          </div>
-        </div>
-
-        <!-- Row 3 -->
-        <div class="service-row">
-          <div class="service-media">
-            <img src="https://images.unsplash.com/photo-1519178614-0b4b1ddb9bea?q=80&w=1600&auto=format&fit=crop" alt="Stacked shipping containers">
-          </div>
-          <div class="service-copy">
-            <h3>Freight Delivery</h3>
-            <p class="price">$500</p>
-            <a class="btn" href="#book">Book Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===========================
-         OUR STORY (image left / text + button right)
-         =========================== -->
-    <section class="story" id="story">
-      <div class="wrap story-grid">
-        <div class="story-media">
-          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1400&auto=format&fit=crop" alt="Smiling truck driver">
-        </div>
-        <div class="story-copy">
-          <h2 class="section-title">Our Story</h2>
-          <p>Garufi Trucking Corp is a family-owned logistics company focused on delivering quality services.</p>
-          <p>Serving New York, New Jersey, and Connecticut, we leverage AI to enhance logistics.</p>
-          <a class="btn" href="#learn">Learn More</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===========================
-         CLIENT FEEDBACK (3 rows)
-         =========================== -->
-    <section class="feedback" id="testimonials">
-      <div class="wrap">
-        <h2 class="section-title">Client Feedback</h2>
-
-        <div class="fb-row">
-          <div class="fb-label">Carlos</div>
-          <div class="fb-name">Carlos Reyes</div>
-          <div class="fb-quote">Reliable and efficient, GTC is our go-to trucking partner.</div>
-        </div>
-
-        <div class="fb-row">
-          <div class="fb-label">Tina</div>
-          <div class="fb-name">Tina Thompson</div>
-          <div class="fb-quote">Their real-time tracking is a game changer for our shipments.</div>
-        </div>
-
-        <div class="fb-row">
-          <div class="fb-label">Alex</div>
-          <div class="fb-name">Alex Brown</div>
-          <div class="fb-quote">I highly recommend Garufi Trucking for any logistics needs.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===========================
-         FOLLOW US (5 square tiles)
-         =========================== -->
-    <section class="follow" id="follow">
-      <div class="wrap">
-        <h2 class="section-title">Follow Us</h2>
-        <div class="follow-grid">
-          <a class="tile" href="#"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt=""></a>
-          <a class="tile badge-video" href="#"><img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=800&auto=format&fit=crop" alt=""></a>
-          <a class="tile" href="#"><img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?q=80&w=800&auto=format&fit=crop" alt=""></a>
-          <a class="tile badge-shop" href="#"><img src="https://images.unsplash.com/photo-1585386959984-a4155223160c?q=80&w=800&auto=format&fit=crop" alt=""></a>
-          <a class="tile" href="#"><img src="https://images.unsplash.com/photo-1543109740-4d9baf8b8f54?q=80&w=800&auto=format&fit=crop" alt=""></a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ===========================
-       FOOTER (giant brand name + copyright)
-       =========================== -->
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-brand">GARUFI TRUCKING CORP</div>
-      <p class="legal">© 2035 by Garufi Trucking Corp. Powered and secured by Wix</p>
-    </div>
-  </footer>
-
-  <!-- Visual-only floating chat bubble (no JS) -->
-  <a class="chat" href="#contact" aria-label="Open chat">
-    <span class="bubble">Let’s Chat!</span>
-  </a>
-</body>
-</html>
+  );
+}
