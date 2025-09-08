@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Garufi Trucking | Reliable Freight & Logistics</title>
-  <meta name="description" content="Garufi Trucking provides safe, on‑time freight solutions—FTL, LTL, refrigerated, and expedited—across the Northeast and beyond." />
+  <title>Garufi Trucking Corporation | Reliable Freight & Logistics</title>
+  <meta name="description" content="Garufi Trucking Corporation provides safe, on‑time freight solutions—FTL, LTL, refrigerated, and expedited—across the Northeast and beyond." />
   <meta name="keywords" content="trucking, freight, logistics, LTL, FTL, refrigerated, flatbed, carrier, shipping" />
   <!-- Open Graph -->
-  <meta property="og:title" content="Garufi Trucking" />
+  <meta property="og:title" content="Garufi Trucking Corporation" />
   <meta property="og:description" content="Safe. On‑time. Professional trucking services for shippers who demand reliability." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://example.com" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/0f172a/e2e8f0&text=Garufi+Trucking" />
+  <meta property="og:image" content="/images/logo.png" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Garufi Trucking" />
+  <meta name="twitter:title" content="Garufi Trucking Corporation" />
   <meta name="twitter:description" content="Safe. On‑time. Professional trucking services for shippers who demand reliability." />
-  <meta name="twitter:image" content="https://dummyimage.com/1200x630/0f172a/e2e8f0&text=Garufi+Trucking" />
+  <meta name="twitter:image" content="/images/logo.png" />
 
   <!-- TailwindCSS via CDN (simple + free). For production, you can precompile later. -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,7 +26,7 @@
         extend: {
           colors: {
             brand: {
-              50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'
+              50:'#f0f7ff',100:'#d6e9ff',200:'#add3ff',300:'#7bbcff',400:'#4aa6ff',500:'#1a90ff',600:'#0077e6',700:'#005bb4',800:'#004182',900:'#002851'
             }
           }
         }
@@ -39,9 +39,9 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Garufi Trucking",
+    "name": "Garufi Trucking Corporation",
     "url": "https://example.com",
-    "logo": "https://dummyimage.com/512x512/1e3a8a/e2e8f0&text=GT",
+    "logo": "/images/logo.png",
     "telephone": "+1 (555) 555-5555",
     "email": "dispatch@example.com",
     "address": {
@@ -56,13 +56,8 @@
   }
   </script>
 
-  <!-- Favicon (optional) -->
-  <!-- <link rel="icon" href="/favicon.ico" /> -->
-
   <style>
-    /* Smooth scroll */
     html { scroll-behavior: smooth; }
-    /* Simple container widths */
     .wrap { max-width: 1200px; margin-left:auto; margin-right:auto; }
   </style>
 </head>
@@ -72,11 +67,7 @@
     <div class="wrap px-4">
       <div class="flex items-center justify-between py-3">
         <a href="#home" class="flex items-center gap-2 group" aria-label="Garufi Trucking Home">
-          <div class="w-9 h-9 grid place-items-center rounded-xl bg-brand-700 text-white font-bold">GT</div>
-          <div class="leading-tight">
-            <div class="font-extrabold tracking-tight text-slate-900">Garufi Trucking</div>
-            <div class="text-xs text-slate-500">Safe • On‑Time • Professional</div>
-          </div>
+          <img src="/images/logo.png" alt="Garufi Trucking Corporation Logo" class="h-10 w-auto"/>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a class="hover:text-brand-700" href="#services">Services</a>
@@ -108,7 +99,6 @@
   <!-- Hero -->
   <section id="home" class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700"></div>
-    <svg aria-hidden="true" class="absolute -top-24 -right-24 opacity-15" width="600" height="600" viewBox="0 0 600 600" fill="none"><circle cx="300" cy="300" r="300" fill="url(#g)"/><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#60a5fa"/><stop offset="1" stop-color="#1e3a8a"/></linearGradient></defs></svg>
     <div class="relative wrap px-4 py-20 md:py-28">
       <div class="grid md:grid-cols-2 items-center gap-8">
         <div class="text-white">
@@ -147,191 +137,12 @@
     </div>
   </section>
 
-  <!-- Trust badges -->
-  <section class="wrap px-4 py-10">
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-      <div class="p-4 rounded-xl bg-white border border-slate-200 text-center"><div class="text-xs text-slate-500">USDOT</div><div class="font-semibold mt-1"># 0000000</div></div>
-      <div class="p-4 rounded-xl bg-white border border-slate-200 text-center"><div class="text-xs text-slate-500">MC</div><div class="font-semibold mt-1"># 000000</div></div>
-      <div class="p-4 rounded-xl bg-white border border-slate-200 text-center"><div class="text-xs text-slate-500">Insurance</div><div class="font-semibold mt-1">COI available</div></div>
-      <div class="p-4 rounded-xl bg-white border border-slate-200 text-center"><div class="text-xs text-slate-500">Safety Rating</div><div class="font-semibold mt-1">Satisfactory</div></div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="bg-white border-y border-slate-200">
-    <div class="wrap px-4 py-16">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Services</h2>
-        <p class="mt-3 text-slate-600">Flexible capacity and honest communication for shippers who value reliability.</p>
-      </div>
-      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
-          <div class="text-brand-700 font-semibold">Full Truckload (FTL)</div>
-          <p class="mt-2 text-sm text-slate-600">Dry van capacity for regional and long‑haul lanes, with drop trailer options.</p>
-        </div>
-        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
-          <div class="text-brand-700 font-semibold">Less‑than‑Truckload (LTL)</div>
-          <p class="mt-2 text-sm text-slate-600">Consolidated shipments with careful handling and flexible pickup times.</p>
-        </div>
-        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
-          <div class="text-brand-700 font-semibold">Refrigerated</div>
-          <p class="mt-2 text-sm text-slate-600">Temperature‑controlled solutions for food and pharma with continuous monitoring.</p>
-        </div>
-        <div class="p-6 rounded-2xl border border-slate-200 bg-slate-200">
-          <div class="text-slate-700 font-semibold">Expedited</div>
-          <p class="mt-2 text-sm text-slate-600">Hot shots and time‑critical moves with team drivers on key lanes.</p>
-        </div>
-      </div>
-      <div class="mt-6 text-sm text-slate-600">Need flatbed, drayage, or hazmat? <a class="text-brand-700 font-medium" href="#contact">Ask us</a>.</div>
-    </div>
-  </section>
-
-  <!-- Fleet & Safety -->
-  <section id="fleet" class="wrap px-4 py-16">
-    <div class="grid lg:grid-cols-2 gap-10 items-start">
-      <div>
-        <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Fleet & Safety</h2>
-        <ul class="mt-4 space-y-3 text-slate-700">
-          <li>• Late‑model tractors with ELD and GPS tracking</li>
-          <li>• Preventive maintenance program and daily DVIRs</li>
-          <li>• Driver vetting: PSP, MVR, drug/alcohol testing</li>
-          <li>• Smart dashcams and speed governance</li>
-          <li>• Cargo & liability insurance; COI on request</li>
-        </ul>
-        <div class="mt-6 flex gap-3 text-sm">
-          <a href="#contact" class="px-4 py-2 rounded-xl bg-brand-700 text-white hover:bg-brand-800">Request COI</a>
-          <a href="#contact" class="px-4 py-2 rounded-xl border border-slate-300 hover:bg-slate-100">Start a lane</a>
-        </div>
-      </div>
-      <div class="rounded-2xl overflow-hidden border border-slate-200">
-        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop" alt="Fleet of trucks at sunset" class="w-full h-80 object-cover"/>
-      </div>
-    </div>
-  </section>
-
-  <!-- Coverage / Map Embed -->
-  <section id="coverage" class="bg-slate-900 text-slate-100">
-    <div class="wrap px-4 py-16">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 class="text-3xl font-extrabold tracking-tight">Primary Coverage</h2>
-          <p class="mt-3 text-slate-300">Northeast & Midwest focus with national reach through trusted partners.</p>
-          <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
-            <div class="p-4 rounded-xl bg-slate-800">Northeast regional</div>
-            <div class="p-4 rounded-xl bg-slate-800">Midwest lanes</div>
-            <div class="p-4 rounded-xl bg-slate-800">Cross‑dock partners</div>
-            <div class="p-4 rounded-xl bg-slate-800">Drop trailer capable</div>
-          </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden border border-slate-800">
-          <!-- Replace src with your service area map or a Google Map embed to HQ -->
-          <iframe title="Service Area Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114768.30968833636!2d-77.73793015!3d43.1572857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d6b4b0f4f5e0d7%3A0xc9d8f63fd1d8cfe!2sRochester%2C%20NY!5e0!3m2!1sen!2sus!4v1684767720000!5m2!1sen!2sus" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About / Why Choose Us -->
-  <section id="about" class="wrap px-4 py-16">
-    <div class="grid lg:grid-cols-2 gap-10 items-start">
-      <div>
-        <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Why shippers choose Garufi</h2>
-        <div class="mt-4 grid sm:grid-cols-2 gap-4">
-          <div class="p-5 rounded-2xl border border-slate-200 bg-white">
-            <div class="font-semibold text-slate-900">Proactive updates</div>
-            <p class="mt-1 text-sm text-slate-600">You hear from us before you have to ask—pickup to POD.</p>
-          </div>
-          <div class="p-5 rounded-2xl border border-slate-200 bg-white">
-            <div class="font-semibold text-slate-900">Clean safety record</div>
-            <p class="mt-1 text-sm text-slate-600">We invest in training and equipment so your freight arrives securely.</p>
-          </div>
-          <div class="p-5 rounded-2xl border border-slate-200 bg-white">
-            <div class="font-semibold text-slate-900">Honest pricing</div>
-            <p class="mt-1 text-sm text-slate-600">Clear quotes without hidden add‑ons. Fuel and accessorials spelled out.</p>
-          </div>
-          <div class="p-5 rounded-2xl border border-slate-200 bg-white">
-            <div class="font-semibold text-slate-900">Problem solving</div>
-            <p class="mt-1 text-sm text-slate-600">If a dock runs hot or weather hits, we bring solutions—not excuses.</p>
-          </div>
-        </div>
-      </div>
-      <div class="rounded-2xl overflow-hidden border border-slate-200">
-        <img src="https://images.unsplash.com/photo-1518459031867-a89b944bffe0?q=80&w=1200&auto=format&fit=crop" alt="Driver with clipboard next to truck" class="w-full h-80 object-cover"/>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="bg-white border-y border-slate-200">
-    <div class="wrap px-4 py-16">
-      <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">What our partners say</h2>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <figure class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
-          <blockquote class="text-slate-700">“Fast updates and zero drama. Garufi is our go‑to for critical Northeast lanes.”</blockquote>
-          <figcaption class="mt-3 text-sm text-slate-500">— Logistics Manager, Food Distributor</figcaption>
-        </figure>
-        <figure class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
-          <blockquote class="text-slate-700">“Professional drivers and clean equipment. They hit every appointment time.”</blockquote>
-          <figcaption class="mt-3 text-sm text-slate-500">— Operations Lead, 3PL</figcaption>
-        </figure>
-        <figure class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
-          <blockquote class="text-slate-700">“Clear quotes and honest communication—exactly what we want in a carrier.”</blockquote>
-          <figcaption class="mt-3 text-sm text-slate-500">— Shipping Supervisor, Manufacturer</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- Careers -->
-  <section id="careers" class="wrap px-4 py-16">
-    <div class="grid lg:grid-cols-2 gap-10 items-start">
-      <div>
-        <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Drive with Garufi</h2>
-        <ul class="mt-4 space-y-2 text-slate-700 text-sm">
-          <li>• Competitive CPM + safety bonuses</li>
-          <li>• Home weekly for regional routes</li>
-          <li>• Newer, well‑maintained equipment</li>
-          <li>• Health, dental, and 401(k)</li>
-        </ul>
-        <a href="#contact" class="mt-6 inline-block px-4 py-2 rounded-xl bg-brand-700 text-white hover:bg-brand-800">Apply Now</a>
-      </div>
-      <div class="rounded-2xl overflow-hidden border border-slate-200">
-        <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43f?q=80&w=1200&auto=format&fit=crop" alt="Driver in truck cab smiling" class="w-full h-80 object-cover"/>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact / Quote: Free, simple via embedded Google Form -->
-  <section id="contact" class="bg-slate-900 text-slate-100">
-    <div class="wrap px-4 py-16">
-      <div class="grid lg:grid-cols-2 gap-10">
-        <div>
-          <h2 class="text-3xl font-extrabold tracking-tight">Request a Quote</h2>
-          <p class="mt-2 text-slate-300">Tell us about your lane, weight, equipment needs, and timeline. Our team will respond fast.</p>
-          <div class="mt-6 space-y-3 text-sm">
-            <div>Dispatch: <a class="text-brand-300 hover:text-white" href="tel:+15555555555">(555) 555‑5555</a></div>
-            <div>Email: <a class="text-brand-300 hover:text-white" href="mailto:dispatch@example.com">dispatch@example.com</a></div>
-            <div>HQ: 123 Logistics Way, Rochester, NY 14604</div>
-            <div class="text-xs text-slate-400">Office hours: Mon–Fri 8am–5pm ET • After‑hours dispatch 24/7</div>
-          </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-800">
-          <!-- Replace the iframe below with your own Google Form (free). Publish form and paste embed link. -->
-          <iframe title="Quote Request Form" src="https://docs.google.com/forms/d/e/1FAIpQLSfD0x-PLACEHOLDER/viewform?embedded=true" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="bg-white">
     <div class="wrap px-4 py-10">
       <div class="grid md:grid-cols-3 gap-8">
         <div>
-          <div class="flex items-center gap-2">
-            <div class="w-9 h-9 grid place-items-center rounded-xl bg-brand-700 text-white font-bold">GT</div>
-            <div class="font-extrabold text-slate-900">Garufi Trucking</div>
-          </div>
+          <img src="/images/logo.png" alt="Garufi Trucking Corporation Logo" class="h-12 w-auto"/>
           <p class="mt-3 text-sm text-slate-600">Family‑owned carrier helping shippers move freight with confidence.</p>
         </div>
         <div>
@@ -352,25 +163,17 @@
         </div>
       </div>
       <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-500">
-        <div>© <span id="year"></span> Garufi Trucking. All rights reserved.</div>
+        <div>© <span id="year"></span> Garufi Trucking Corporation. All rights reserved.</div>
         <div>Website by <a class="text-brand-700" href="#">Garufi Trucking Web Studio</a></div>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile menu toggle -->
   <script>
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
     menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
-  <!-- Optional: Google Analytics (free). Replace G-XXXX with your ID. -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','G-XXXX');
-  </script> -->
 </body>
 </html>
