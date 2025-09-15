@@ -4,345 +4,329 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Garufi Trucking Corporation | Reliable Freight & Logistics</title>
-  <meta name="description" content="Garufi Trucking Corporation provides safe, on-time freight solutions—FTL, LTL, refrigerated, and expedited—across the Northeast and beyond." />
-  <meta name="keywords" content="trucking, freight, logistics, LTL, FTL, refrigerated, flatbed, carrier, shipping" />
-  <!-- Open Graph -->
-  <meta property="og:title" content="Garufi Trucking Corporation" />
-  <meta property="og:description" content="Safe. On-time. Professional trucking services for shippers who demand reliability." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://<username>.github.io/garufi-trucking/" />
-  <meta property="og:image" content="garufi-trucking-logo.png" />
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Garufi Trucking Corporation" />
-  <meta name="twitter:description" content="Safe. On-time. Professional trucking services for shippers who demand reliability." />
-  <meta name="twitter:image" content="garufi-trucking-logo.png" />
-
-  <!-- TailwindCSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { 50:'#f0f7ff',100:'#d6e9ff',200:'#add3ff',300:'#7bbcff',400:'#4aa6ff',500:'#1a90ff',600:'#0077e6',700:'#005bb4',800:'#004182',900:'#002851' }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Schema.org (adjust placeholders later) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Garufi Trucking Corporation",
-    "url": "https://<username>.github.io/garufi-trucking/",
-    "logo": "garufi-trucking-logo.png",
-    "telephone": "+1 (555) 555-5555",
-    "email": "dispatch@example.com",
-    "address": { "@type": "PostalAddress", "streetAddress": "123 Logistics Way", "addressLocality": "Rochester", "addressRegion": "NY", "postalCode": "14604", "addressCountry": "US" },
-    "sameAs": []
-  }
-  </script>
-
+  <meta name="description" content="Family-owned carrier providing dependable freight solutions backed by professional drivers and a commitment to safety." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    html { scroll-behavior: smooth; }
-    .wrap { max-width: 1200px; margin-left:auto; margin-right:auto; }
-    section { scroll-margin-top: 84px; }
-    .reveal { opacity: 0; transform: translateY(14px); transition: all .7s cubic-bezier(.22,1,.36,1); }
-    .reveal.show { opacity: 1; transform: translateY(0); }
-    .card-img { position: relative; overflow: hidden; }
-    .card-img img { transition: transform .6s ease; }
-    .card-img:hover img { transform: scale(1.05); }
-    .overlay { background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.1)); }
+    /* ============================
+       BRAND TOKENS
+       ============================ */
+    :root{
+      --blue:#0d2c4b;          /* Interstate Blue */
+      --white:#ffffff;          /* Clear Road White */
+      --asphalt:#5d6d7e;        /* Asphalt Gray */
+      --fog:#d5d8dc;            /* Fog Line Gray */
+      --red:#b71c1c;            /* Patriot Red */
+      --bright-blue:#3498db;    /* High-Beam Blue */
+      --radius:20px;            /* Softer, more premium */
+      --radius-pill:9999px;     /* Full pill */
+      --shadow:0 12px 34px rgba(13,44,75,.10);
+      --shadow-sm:0 6px 18px rgba(13,44,75,.08);
+      --border:#e6e8eb;         /* subtle pro border */
+    }
+
+    /* ============================
+       BASE & UTILS
+       ============================ */
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:var(--asphalt); background:var(--white); }
+    img{ max-width:100%; height:auto; display:block; }
+    a{ color:var(--bright-blue); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .wrap{ max-width:1200px; margin-inline:auto; padding-inline:16px; }
+    .visually-hidden{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+    .btn{ display:inline-block; padding:12px 20px; border-radius:var(--radius-pill); font-weight:700; letter-spacing:.2px; text-decoration:none; border:1px solid transparent; transition:transform .08s ease, box-shadow .2s ease, opacity .2s ease; box-shadow:var(--shadow-sm); }
+    .btn:active{ transform:translateY(1px); }
+    .btn-primary{ background:var(--red); color:#fff; }
+    .btn-primary:hover{ opacity:.95; box-shadow:0 10px 20px rgba(183,28,28,.25); }
+    .btn-secondary{ background:var(--bright-blue); color:#fff; }
+    .btn-secondary:hover{ opacity:.95; box-shadow:0 10px 20px rgba(52,152,219,.25); }
+
+    .chip{ display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:var(--radius-pill); background:#fff; border:1px solid var(--border); font-weight:600; color:var(--asphalt); box-shadow:var(--shadow-sm); }
+    .chip svg{ width:18px; height:18px; color:var(--bright-blue); }
+
+    section{ padding:70px 16px; }
+    h2{ font-size:clamp(26px,3vw,34px); text-align:center; color:var(--blue); margin:0 0 14px; font-weight:800; letter-spacing:-.3px; }
+    .sub{ text-align:center; margin:0 auto 32px; max-width:760px; }
+
+    /* ============================
+       HEADER
+       ============================ */
+    header{ position:sticky; top:0; z-index:20; background:rgba(255,255,255,.95); backdrop-filter:saturate(160%) blur(8px); border-bottom:1px solid var(--border); }
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .brand img{ height:44px; width:auto; }
+    .nav-links{ display:none; gap:22px; }
+    .nav-links a{ color:var(--asphalt); font-weight:600; }
+    .nav-links a:hover{ color:var(--blue); text-decoration:none; }
+    .menu-btn{ display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid var(--border); border-radius:14px; background:#fff; }
+    @media (min-width: 960px){ .nav-links{ display:flex; } .menu-btn{ display:none; } }
+
+    /* Mobile drawer */
+    .drawer{ display:none; border-top:1px solid var(--border); background:#fff; }
+    .drawer.open{ display:block; }
+    .drawer a{ display:block; padding:14px 0; border-bottom:1px solid var(--border); color:var(--asphalt); font-weight:600; }
+
+    /* ============================
+       HERO (logo-first)
+       ============================ */
+    .hero{ background:var(--blue); color:#fff; text-align:center; position:relative; overflow:hidden; }
+    .hero-inner{ padding:100px 16px 110px; }
+    .hero img{ max-width:360px; margin:0 auto 26px; filter:drop-shadow(0 14px 30px rgba(0,0,0,.35)); }
+    .hero h1{ font-size:clamp(26px,4.2vw,42px); font-weight:800; line-height:1.25; margin:0 auto 24px; max-width:900px; letter-spacing:-.2px; }
+    .hero .buttons{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+    /* ============================
+       TRUST STRIP (rounded pills)
+       ============================ */
+    .trust{ background:#f7f9fb; padding:26px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .trust .items{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+
+    /* ============================
+       SERVICES (rounded cards)
+       ============================ */
+    .services-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
+    .card{ border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:#fff; box-shadow:var(--shadow-sm); transition:transform .12s ease, box-shadow .2s ease; }
+    .card:hover{ transform:translateY(-3px); box-shadow:var(--shadow); }
+    .card .media{ position:relative; height:170px; background:#eef3f6; }
+    .card .media img{ width:100%; height:100%; object-fit:cover; }
+    .card h3{ margin:0; padding:16px 18px; color:var(--blue); font-size:18px; }
+
+    /* ============================
+       COVERAGE
+       ============================ */
+    .coverage-grid{ display:grid; gap:28px; align-items:center; }
+    .coverage-grid iframe{ width:100%; height:380px; border:0; border-radius:var(--radius); box-shadow:var(--shadow-sm); }
+    @media (min-width: 960px){ .coverage-grid{ grid-template-columns:1.1fr 1fr; } }
+
+    /* ============================
+       TECH & SAFETY (rounded list)
+       ============================ */
+    .tech{ background:#f7f9fb; }
+    .feature-list{ list-style:none; padding:0; margin:0; max-width:820px; margin-inline:auto; display:grid; gap:12px; }
+    .feature{ display:flex; align-items:center; gap:12px; background:#fff; padding:14px 16px; border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow-sm); }
+    .feature svg{ width:18px; height:18px; color:var(--red); flex:0 0 auto; }
+
+    /* ============================
+       GALLERY (rounded thumbs)
+       ============================ */
+    .gallery-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+    .gallery-grid img{ width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:16px; box-shadow:var(--shadow-sm); }
+
+    /* ============================
+       CONTACT (rounded cards)
+       ============================ */
+    .contact-grid{ display:grid; gap:24px; max-width:1000px; margin-inline:auto; align-items:start; }
+    .contact-card{ background:#fff; border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px; }
+    .contact-card form{ display:grid; gap:14px; }
+    label{ font-size:14px; font-weight:700; color:var(--blue); }
+    input, textarea{ width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:14px; font:inherit; }
+    button[type="submit"]{ background:var(--red); color:#fff; border:none; padding:12px 18px; border-radius:var(--radius-pill); font-weight:700; cursor:pointer; box-shadow:var(--shadow-sm); }
+    button[type="submit"]:hover{ opacity:.95; box-shadow:0 10px 20px rgba(183,28,28,.25); }
+    .contact-info{ text-align:center; color:var(--asphalt); }
+    @media (min-width: 960px){ .contact-grid{ grid-template-columns:1fr 1fr; } .contact-info{ text-align:left; } }
+
+    /* ============================
+       FOOTER
+       ============================ */
+    footer{ background:#fff; border-top:1px solid var(--border); }
+    .footer-grid{ display:grid; gap:24px; padding:30px 0; color:var(--asphalt); }
+    .footer-brand{ display:flex; align-items:center; gap:14px; }
+    .footer-brand img{ height:48px; }
+    .foot-note{ text-align:center; font-size:14px; padding:12px 0 28px; color:var(--asphalt); }
+    @media (min-width: 900px){ .footer-grid{ grid-template-columns:1.2fr .8fr .8fr; } }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
-  <!-- Top bar -->
-  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
-    <div class="wrap px-4">
-      <div class="flex items-center justify-between py-3">
-        <a href="#home" class="flex items-center gap-3 group" aria-label="Garufi Trucking Corporation Home">
-          <img src="garufi-trucking-logo.png" alt="Garufi Trucking Corporation Logo" class="h-10 w-auto"/>
-        </a>
-        <nav class="hidden lg:flex items-center gap-6 text-sm">
-          <a class="hover:text-brand-700" href="#services">Services</a>
-          <a class="hover:text-brand-700" href="#industries">Industries</a>
-          <a class="hover:text-brand-700" href="#gallery">Gallery</a>
-          <a class="hover:text-brand-700" href="#tech">Technology</a>
-          <a class="hover:text-brand-700" href="#coverage">Coverage</a>
-          <a class="hover:text-brand-700" href="#cases">Case Studies</a>
-          <a class="hover:text-brand-700" href="#careers">Careers</a>
-          <a class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-700 text-white hover:bg-brand-800" href="#contact">Get a Quote</a>
-        </nav>
-        <button id="menuBtn" class="lg:hidden p-2 rounded-lg border border-slate-300" aria-label="Open menu">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
+<body>
+  <a href="#main" class="visually-hidden">Skip to content</a>
+
+  <!-- HEADER -->
+  <header role="banner">
+    <div class="wrap nav" aria-label="Primary">
+      <div class="brand">
+        <img src="logo-placeholder.png" alt="Garufi Trucking Corporation Logo" />
       </div>
-      <div id="mobileNav" class="hidden lg:hidden pb-4">
-        <div class="flex flex-col gap-3 text-sm">
-          <a class="hover:text-brand-700" href="#services">Services</a>
-          <a class="hover:text-brand-700" href="#industries">Industries</a>
-          <a class="hover:text-brand-700" href="#gallery">Gallery</a>
-          <a class="hover:text-brand-700" href="#tech">Technology</a>
-          <a class="hover:text-brand-700" href="#coverage">Coverage</a>
-          <a class="hover:text-brand-700" href="#cases">Case Studies</a>
-          <a class="hover:text-brand-700" href="#careers">Careers</a>
-          <a class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-brand-700 text-white hover:bg-brand-800" href="#contact">Get a Quote</a>
-        </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#tech">Technology</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <!-- hamburger icon -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="drawer" role="dialog" aria-label="Mobile menu">
+      <div class="wrap">
+        <a href="#services">Services</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#tech">Technology</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </header>
 
-  <!-- Sticky mobile CTA -->
-  <div class="fixed bottom-3 inset-x-3 sm:hidden z-50">
-    <a href="#contact" class="block text-center px-4 py-3 rounded-xl bg-brand-700 text-white shadow-lg">Request a Quote</a>
-  </div>
+  <!-- HERO -->
+  <section class="hero" id="home" role="region" aria-label="Hero">
+    <div class="wrap hero-inner">
+      <img src="logo-placeholder.png" alt="Garufi Trucking Logo" />
+      <h1 id="main">We exist to help our customers grow by providing dependable freight solutions backed by family values, professional drivers, and a commitment to safety.</h1>
+      <div class="buttons" style="margin-top:18px;">
+        <a href="#contact" class="btn btn-primary">Request a Quote</a>
+        <a href="tel:5555555555" class="btn btn-secondary">Call Dispatch (555) 555-5555</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- Hero -->
-  <section id="home" class="relative overflow-hidden min-h-[80vh] flex items-center">
-    <div class="absolute inset-0 bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700"></div>
-    <div class="relative wrap px-4 py-20 md:py-28">
-      <div class="grid md:grid-cols-2 items-center gap-10">
-        <div class="text-white reveal">
-          <p class="uppercase tracking-widest text-xs/relaxed text-brand-200">Asset‑based • Family‑owned</p>
-          <h1 class="mt-3 text-4xl md:text-6xl font-extrabold tracking-tight">Reliable Freight & Logistics</h1>
-          <p class="mt-4 text-brand-100 text-lg">On‑time, safe deliveries with proactive updates—FTL, LTL, reefer, expedited.</p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#contact" class="px-5 py-3 rounded-xl bg-white text-brand-800 font-semibold hover:bg-brand-50">Request a Quote</a>
-            <a href="tel:+15555555555" class="px-5 py-3 rounded-xl border border-white/30 text-white hover:bg-white/10">Call Dispatch</a>
+  <!-- TRUST STRIP -->
+  <section class="trust" aria-label="Trust & Compliance">
+    <div class="wrap items">
+      <span class="chip" title="USDOT Number"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> USDOT: 0000000</span>
+      <span class="chip" title="MC Number"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 12H8"/></svg> MC: 000000</span>
+      <span class="chip" title="Insurance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg> COI Available</span>
+      <span class="chip" title="Years in business"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Family‑Owned 3+ Years</span>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" aria-label="Core Services">
+    <div class="wrap">
+      <h2>Core Services</h2>
+      <p class="sub">Capacity you can count on — FTL, LTL, Refrigerated, and Expedited options tailored to your lanes.</p>
+      <div class="services-grid">
+        <article class="card">
+          <div class="media"><img src="ftl-placeholder.jpg" alt="Dry van truck on highway"></div>
+          <h3>FTL (Dry Van)</h3>
+        </article>
+        <article class="card">
+          <div class="media"><img src="ltl-placeholder.jpg" alt="LTL freight at dock"></div>
+          <h3>LTL & Consolidation</h3>
+        </article>
+        <article class="card">
+          <div class="media"><img src="reefer-placeholder.jpg" alt="Refrigerated trailer"></div>
+          <h3>Refrigerated</h3>
+        </article>
+        <article class="card">
+          <div class="media"><img src="expedited-placeholder.jpg" alt="Expedited night run"></div>
+          <h3>Expedited</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section id="coverage" aria-label="Coverage">
+    <div class="wrap coverage-grid">
+      <div>
+        <h2>Primary Coverage</h2>
+        <p class="sub">Northeast & Midwest, with national reach via partners.</p>
+      </div>
+      <iframe title="Service Area Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114768.30968833636!2d-77.73793015!3d43.1572857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d6b4b0f4f5e0d7%3A0xc9d8f63fd1d8cfe!2sRochester%2C%20NY!5e0!3m2!1sen!2sus!4v1684767720000!5m2!1sen!2sus" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- TECH & SAFETY -->
+  <section id="tech" class="tech" aria-label="Technology & Safety">
+    <div class="wrap">
+      <h2>Technology & Tracking</h2>
+      <p class="sub">Fewer surprises, clearer ETAs, and documents when you need them.</p>
+      <ul class="feature-list">
+        <li class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Live GPS/ELD + Geofencing</li>
+        <li class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>POD/BOL on Delivery</li>
+        <li class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Appointment & ETA Automation</li>
+        <li class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>API/EDI‑Ready Integrations</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section aria-label="Gallery">
+    <div class="wrap">
+      <h2>In the Field</h2>
+      <div class="gallery-grid">
+        <img src="gallery1-placeholder.jpg" alt="Truck photo 1">
+        <img src="gallery2-placeholder.jpg" alt="Truck photo 2">
+        <img src="gallery3-placeholder.jpg" alt="Truck photo 3">
+        <img src="gallery4-placeholder.jpg" alt="Truck photo 4">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / QUOTE -->
+  <section id="contact" aria-label="Contact">
+    <div class="wrap contact-grid">
+      <div class="contact-card">
+        <h2>Request a Quote</h2>
+        <form action="#" method="post">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
           </div>
-        </div>
-        <div class="bg-white/10 border border-white/20 rounded-2xl p-4 md:p-6 shadow-2xl reveal">
-          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1400&auto=format&fit=crop" alt="Blue semi-truck on the highway" class="rounded-xl w-full h-72 object-cover" loading="lazy"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats band -->
-  <section class="bg-white border-y border-slate-200">
-    <div class="wrap px-4 py-10 reveal">
-      <div class="grid sm:grid-cols-3 gap-6 text-center">
-        <div class="p-6 rounded-2xl bg-slate-50 border"><div class="text-3xl font-extrabold text-slate-900">98.5%</div><div class="text-slate-500 text-sm">On‑time</div></div>
-        <div class="p-6 rounded-2xl bg-slate-50 border"><div class="text-3xl font-extrabold text-slate-900">1.2M+</div><div class="text-slate-500 text-sm">Safe miles</div></div>
-        <div class="p-6 rounded-2xl bg-slate-50 border"><div class="text-3xl font-extrabold text-slate-900">24/7</div><div class="text-slate-500 text-sm">Dispatch</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services as photo cards (clean, minimal copy) -->
-  <section id="services" class="wrap px-4 py-20 reveal">
-    <div class="max-w-3xl">
-      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Core Services</h2>
-      <p class="mt-3 text-slate-600">Capacity you can count on.</p>
-    </div>
-    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <a class="card-img rounded-2xl border bg-white block" href="#contact">
-        <img src="https://images.unsplash.com/photo-1532978379173-52388daba327?q=80&w=1200&auto=format&fit=crop" alt="Dry van truck on highway" class="w-full h-52 object-cover" loading="lazy"/>
-        <div class="absolute inset-0 overlay"></div>
-        <div class="absolute bottom-3 left-3 text-white font-semibold">FTL (Dry Van)</div>
-      </a>
-      <a class="card-img rounded-2xl border bg-white block" href="#contact">
-        <img src="https://images.unsplash.com/photo-1586521995568-39e81b69d99c?q=80&w=1200&auto=format&fit=crop" alt="LTL freight at dock" class="w-full h-52 object-cover" loading="lazy"/>
-        <div class="absolute inset-0 overlay"></div>
-        <div class="absolute bottom-3 left-3 text-white font-semibold">LTL & Consolidation</div>
-      </a>
-      <a class="card-img rounded-2xl border bg-white block" href="#contact">
-        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=1200&auto=format&fit=crop" alt="Refrigerated trailer" class="w-full h-52 object-cover" loading="lazy"/>
-        <div class="absolute inset-0 overlay"></div>
-        <div class="absolute bottom-3 left-3 text-white font-semibold">Refrigerated</div>
-      </a>
-      <a class="card-img rounded-2xl border bg-white block" href="#contact">
-        <img src="https://images.unsplash.com/photo-1518558409156-2f99dae5a2f8?q=80&w=1200&auto=format&fit=crop" alt="Expedited night run" class="w-full h-52 object-cover" loading="lazy"/>
-        <div class="absolute inset-0 overlay"></div>
-        <div class="absolute bottom-3 left-3 text-white font-semibold">Expedited</div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Industries (condensed) -->
-  <section id="industries" class="bg-white border-y border-slate-200">
-    <div class="wrap px-4 py-16 reveal">
-      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Industries</h2>
-      <div class="mt-6 flex flex-wrap gap-2 text-sm">
-        <span class="px-3 py-1 rounded-full border bg-slate-50">Food & Beverage</span>
-        <span class="px-3 py-1 rounded-full border bg-slate-50">Manufacturing</span>
-        <span class="px-3 py-1 rounded-full border bg-slate-50">Retail & E‑com</span>
-        <span class="px-3 py-1 rounded-full border bg-slate-50">Pharma</span>
-        <span class="px-3 py-1 rounded-full border bg-slate-50">Construction</span>
-        <span class="px-3 py-1 rounded-full border bg-slate-50">Paper & Packaging</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Big photo gallery -->
-  <section id="gallery" class="wrap px-4 py-20 reveal">
-    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">In the Field</h2>
-    <div class="mt-8 grid md:grid-cols-3 gap-6">
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop" alt="Truck at sunrise" class="w-full h-64 object-cover rounded-2xl border" loading="lazy"/>
-      <img src="https://images.unsplash.com/photo-1544829728-e5cb9eedcd61?q=80&w=1200&auto=format&fit=crop" alt="Warehouse dock" class="w-full h-64 object-cover rounded-2xl border" loading="lazy"/>
-      <img src="https://images.unsplash.com/photo-1610141160723-42c763556a87?q=80&w=1200&auto=format&fit=crop" alt="Highway at night" class="w-full h-64 object-cover rounded-2xl border" loading="lazy"/>
-      <img src="https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&w=1200&auto=format&fit=crop" alt="Fleet lineup" class="w-full h-64 object-cover rounded-2xl border" loading="lazy"/>
-      <img src="https://images.unsplash.com/photo-1459478309853-2c33a60058e7?q=80&w=1200&auto=format&fit=crop" alt="Loading pallets" class="w-full h-64 object-cover rounded-2xl border" loading="lazy"/>
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Driver on route" class="w-full h-64 object-cover rounded-2xl border" loading="lazy"/>
-    </div>
-  </section>
-
-  <!-- Technology (trimmed copy) -->
-  <section id="tech" class="bg-slate-900 text-slate-100">
-    <div class="wrap px-4 py-20 reveal">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Technology & Tracking</h2>
-          <ul class="mt-6 space-y-3 text-sm text-slate-300">
-            <li>• Live GPS/ELD + geofencing</li>
-            <li>• POD/BOL on delivery</li>
-            <li>• Appointment & ETA automation</li>
-            <li>• API/EDI-ready integrations</li>
-          </ul>
-        </div>
-        <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-800 p-4">
-          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1400&auto=format&fit=crop" alt="Operations dashboard" class="w-full h-80 object-cover rounded-xl" loading="lazy"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Coverage / Map Embed -->
-  <section id="coverage" class="bg-white border-y border-slate-200">
-    <div class="wrap px-4 py-20 reveal">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Primary Coverage</h2>
-          <p class="mt-3 text-slate-600">Northeast & Midwest, with national reach via partners.</p>
-          <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
-            <div class="p-4 rounded-xl bg-slate-50 border">Northeast regional</div>
-            <div class="p-4 rounded-xl bg-slate-50 border">Midwest lanes</div>
-            <div class="p-4 rounded-xl bg-slate-50 border">Cross‑dock partners</div>
-            <div class="p-4 rounded-xl bg-slate-50 border">Drop trailer capable</div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required>
           </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden border border-slate-200">
-          <iframe title="Service Area Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114768.30968833636!2d-77.73793015!3d43.1572857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d6b4b0f4f5e0d7%3A0xc9d8f63fd1d8cfe!2sRochester%2C%20NY!5e0!3m2!1sen!2sus!4v1684767720000!5m2!1sen!2sus" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Case Studies (tightened) -->
-  <section id="cases" class="wrap px-4 py-20 reveal">
-    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Case Studies</h2>
-    <div class="mt-8 grid md:grid-cols-2 gap-6">
-      <article class="p-6 rounded-2xl border bg-slate-50">
-        <div class="text-sm text-slate-500">Food Distributor</div>
-        <h3 class="text-xl font-semibold mt-1">Appointment compliance 92% → 99.3%</h3>
-        <ul class="mt-4 grid grid-cols-3 gap-3 text-center text-sm">
-          <li class="p-3 rounded-xl bg-white border"><div class="font-bold">−46%</div><div class="text-slate-500">Detention</div></li>
-          <li class="p-3 rounded-xl bg-white border"><div class="font-bold">98.9%</div><div class="text-slate-500">OTD</div></li>
-          <li class="p-3 rounded-xl bg-white border"><div class="font-bold">0</div><div class="text-slate-500">Claims</div></li>
-        </ul>
-      </article>
-      <article class="p-6 rounded-2xl border bg-slate-50">
-        <div class="text-sm text-slate-500">Manufacturer</div>
-        <h3 class="text-xl font-semibold mt-1">Expedited team coverage</h3>
-        <ul class="mt-4 grid grid-cols-3 gap-3 text-center text-sm">
-          <li class="p-3 rounded-xl bg-white border"><div class="font-bold">8 hrs</div><div class="text-slate-500">Saved</div></li>
-          <li class="p-3 rounded-xl bg-white border"><div class="font-bold">100%</div><div class="text-slate-500">OTD</div></li>
-          <li class="p-3 rounded-xl bg-white border"><div class="font-bold">24/7</div><div class="text-slate-500">Updates</div></li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <!-- Careers (unchanged content, photo-first) -->
-  <section id="careers" class="bg-white border-y border-slate-200">
-    <div class="wrap px-4 py-20 reveal">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div class="rounded-2xl overflow-hidden border border-slate-200 order-last lg:order-first">
-          <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43f?q=80&w=1400&auto=format&fit=crop" alt="Driver in truck cab smiling" class="w-full h-80 object-cover" loading="lazy"/>
-        </div>
-        <div>
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Drive with GTC</h2>
-          <ul class="mt-4 space-y-2 text-slate-700 text-sm">
-            <li>• Competitive CPM + safety bonuses</li>
-            <li>• Home weekly for regional routes</li>
-            <li>• Newer, well‑maintained equipment</li>
-            <li>• Health, dental, and 401(k)</li>
-          </ul>
-          <a href="#contact" class="mt-6 inline-block px-4 py-2 rounded-xl bg-brand-700 text-white hover:bg-brand-800">Apply Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact / Quote -->
-  <section id="contact" class="bg-slate-900 text-slate-100">
-    <div class="wrap px-4 py-20 reveal">
-      <div class="grid lg:grid-cols-2 gap-10">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Request a Quote</h2>
-          <div class="mt-6 space-y-3 text-sm">
-            <div>Dispatch: <a class="text-brand-300 hover:text-white" href="tel:+15555555555">(555) 555-5555</a></div>
-            <div>Email: <a class="text-brand-300 hover:text-white" href="mailto:dispatch@example.com">dispatch@example.com</a></div>
-            <div>HQ: 123 Logistics Way, Rochester, NY 14604</div>
-            <div class="text-xs text-slate-400">Office: Mon–Fri 8am–5pm ET • After‑hours dispatch 24/7</div>
+          <div>
+            <label for="message">Shipment Details</label>
+            <textarea id="message" name="message" rows="5" placeholder="Origin, destination, weight/qty, temperature (if reefer), ready date"></textarea>
           </div>
-        </div>
-        <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-800">
-          <iframe title="Quote Request Form" src="https://docs.google.com/forms/d/e/1FAIpQLSfD0x-PLACEHOLDER/viewform?embedded=true" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          <button type="submit">Send Request</button>
+        </form>
+      </div>
+      <div class="contact-card">
+        <h2>Talk to Dispatch</h2>
+        <div class="contact-info">
+          <p><strong>Phone:</strong> (555) 555-5555</p>
+          <p><strong>Email:</strong> dispatch@example.com</p>
+          <p><strong>HQ:</strong> 123 Logistics Way, Rochester, NY 14604</p>
+          <p class="sub" style="margin-top:12px;">Office: Mon–Fri 8am–5pm ET • After‑hours dispatch 24/7</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-white">
-    <div class="wrap px-4 py-12 reveal">
-      <div class="grid md:grid-cols-3 gap-8">
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="logo-placeholder.png" alt="Garufi Trucking Corporation Logo">
         <div>
-          <img src="garufi-trucking-logo.png" alt="Garufi Trucking Corporation Logo" class="h-12 w-auto"/>
-          <p class="mt-3 text-sm text-slate-600">Family‑owned carrier helping shippers move freight with confidence.</p>
-        </div>
-        <div>
-          <div class="font-semibold text-slate-900">Company</div>
-          <ul class="mt-3 space-y-2 text-sm">
-            <li><a class="hover:text-brand-700" href="#services">Services</a></li>
-            <li><a class="hover:text-brand-700" href="#gallery">Gallery</a></li>
-            <li><a class="hover:text-brand-700" href="#tech">Technology</a></li>
-            <li><a class="hover:text-brand-700" href="#careers">Careers</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="font-semibold text-slate-900">Compliance</div>
-          <ul class="mt-3 space-y-2 text-sm text-slate-600">
-            <li>USDOT: 0000000</li>
-            <li>MC: 000000</li>
-            <li>Insurance: COI on request</li>
-          </ul>
+          <div style="font-weight:800;color:var(--blue);">Garufi Trucking Corporation</div>
+          <div>Family‑owned carrier helping shippers move freight with confidence.</div>
         </div>
       </div>
-      <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-500">
-        <div>© <span id="year"></span> Garufi Trucking Corporation. All rights reserved.</div>
-        <div>Website by <a class="text-brand-700" href="#">Garufi Trucking Web Studio</a></div>
+      <div>
+        <div style="font-weight:800;color:var(--blue); margin-bottom:8px;">Company</div>
+        <div><a href="#services">Services</a></div>
+        <div><a href="#coverage">Coverage</a></div>
+        <div><a href="#tech">Technology</a></div>
+        <div><a href="#contact">Contact</a></div>
+      </div>
+      <div>
+        <div style="font-weight:800;color:var(--blue); margin-bottom:8px;">Compliance</div>
+        <div>USDOT: 0000000</div>
+        <div>MC: 000000</div>
+        <div>Insurance: COI on request</div>
       </div>
     </div>
+    <div class="foot-note">© <span id="year"></span> Garufi Trucking Corporation. All rights reserved.</div>
   </footer>
 
   <script>
-    // mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); io.unobserve(entry.target);} });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
   </script>
 </body>
 </html>
+
