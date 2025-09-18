@@ -1,4 +1,4 @@
-<!doctype html>
+ html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -249,6 +249,86 @@
       <h2>In the Field</h2>
       <div class="gallery-grid">
         <img src="gallery1-placeholder.jpg" alt="Truck photo 1">
+        <img src="gallery2-placeholder.jpg" alt="Truck photo 2">
+        <img src="gallery3-placeholder.jpg" alt="Truck photo 3">
+        <img src="gallery4-placeholder.jpg" alt="Truck photo 4">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / QUOTE -->
+  <section id="contact" aria-label="Contact">
+    <div class="wrap contact-grid">
+      <div class="contact-card">
+        <h2>Request a Quote</h2>
+        <form action="#" method="post">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required>
+          </div>
+          <div>
+            <label for="message">Shipment Details</label>
+            <textarea id="message" name="message" rows="5" placeholder="Origin, destination, weight/qty, temperature (if reefer), ready date"></textarea>
+          </div>
+          <button type="submit">Send Request</button>
+        </form>
+      </div>
+      <div class="contact-card">
+        <h2>Talk to Dispatch</h2>
+        <div class="contact-info">
+          <p><strong>Phone:</strong> (555) 555-5555</p>
+          <p><strong>Email:</strong> dispatch@example.com</p>
+          <p><strong>HQ:</strong> 123 Logistics Way, Rochester, NY 14604</p>
+          <p class="sub" style="margin-top:12px;">Office: Mon–Fri 8am–5pm ET • After‑hours dispatch 24/7</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="Garufi_Trucking_Logo.png" alt="Garufi Trucking Corporation Logo">
+        <div>
+          <div style="font-weight:800;color:var(--blue);">Garufi Trucking Corporation</div>
+          <div>Family‑owned carrier helping shippers move freight with confidence.</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:800;color:var(--blue); margin-bottom:8px;">Company</div>
+        <div><a href="#services">Services</a></div>
+        <div><a href="#coverage">Coverage</a></div>
+        <div><a href="#tech">Technology</a></div>
+        <div><a href="#contact">Contact</a></div>
+      </div>
+      <div>
+        <div style="font-weight:800;color:var(--blue); margin-bottom:8px;">Compliance</div>
+        <div>USDOT: 0000000</div>
+        <div>MC: 000000</div>
+        <div>Insurance: COI on request</div>
+      </div>
+    </div>
+    <div class="foot-note">© <span id="year"></span> Garufi Trucking Corporation. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Mobile menu
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>
         <img src="gallery2-placeholder.jpg" alt="Truck photo 2">
         <img src="gallery3-placeholder.jpg" alt="Truck photo 3">
         <img src="gallery4-placeholder.jpg" alt="Truck photo 4">
