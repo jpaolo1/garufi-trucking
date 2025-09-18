@@ -5,38 +5,149 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Garufi Trucking Corporation | Reliable Freight & Logistics</title>
   <meta name="description" content="Family-owned carrier providing dependable freight solutions backed by professional drivers and a commitment to safety." />
-  <meta name="theme-color" content="#0d2c4b" />
-  <link rel="canonical" href="https://example.com/" />
-
-  <!-- Social cards -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Garufi Trucking Corporation | Reliable Freight & Logistics" />
-  <meta property="og:description" content="Family-owned carrier providing dependable freight solutions backed by professional drivers and a commitment to safety." />
-  <meta property="og:image" content="/Garufi_Trucking_Logo.png" />
-  <meta property="og:url" content="https://example.com/" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/Garufi_Trucking_Logo.png">
-  <link rel="apple-touch-icon" href="/Garufi_Trucking_Logo.png">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
   <style>
-    /* CSS kept as previously defined */
+    /* ============================
+       BRAND TOKENS
+       ============================ */
+    :root{
+      --blue:#0d2c4b;          /* Interstate Blue */
+      --white:#ffffff;          /* Clear Road White */
+      --asphalt:#5d6d7e;        /* Asphalt Gray */
+      --fog:#d5d8dc;            /* Fog Line Gray */
+      --red:#b71c1c;            /* Patriot Red */
+      --bright-blue:#3498db;    /* High-Beam Blue */
+      --radius:20px;            /* Softer, more premium */
+      --radius-pill:9999px;     /* Full pill */
+      --shadow:0 12px 34px rgba(13,44,75,.10);
+      --shadow-sm:0 6px 18px rgba(13,44,75,.08);
+      --border:#e6e8eb;         /* subtle pro border */
+    }
+
+    /* ============================
+       BASE & UTILS
+       ============================ */
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:var(--asphalt); background:var(--white); }
+    img{ max-width:100%; height:auto; display:block; }
+    a{ color:var(--bright-blue); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .wrap{ max-width:1200px; margin-inline:auto; padding-inline:16px; }
+    .visually-hidden{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+    .btn{ display:inline-block; padding:12px 20px; border-radius:var(--radius-pill); font-weight:700; letter-spacing:.2px; text-decoration:none; border:1px solid transparent; transition:transform .08s ease, box-shadow .2s ease, opacity .2s ease; box-shadow:var(--shadow-sm); }
+    .btn:active{ transform:translateY(1px); }
+    .btn-primary{ background:var(--red); color:#fff; }
+    .btn-primary:hover{ opacity:.95; box-shadow:0 10px 20px rgba(183,28,28,.25); }
+    .btn-secondary{ background:var(--bright-blue); color:#fff; }
+    .btn-secondary:hover{ opacity:.95; box-shadow:0 10px 20px rgba(52,152,219,.25); }
+
+    .chip{ display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:var(--radius-pill); background:#fff; border:1px solid var(--border); font-weight:600; color:var(--asphalt); box-shadow:var(--shadow-sm); }
+    .chip svg{ width:18px; height:18px; color:var(--bright-blue); }
+
+    section{ padding:70px 16px; }
+    h2{ font-size:clamp(26px,3vw,34px); text-align:center; color:var(--blue); margin:0 0 14px; font-weight:800; letter-spacing:-.3px; }
+    .sub{ text-align:center; margin:0 auto 32px; max-width:760px; }
+
+    /* ============================
+       HEADER
+       ============================ */
+    header{ position:sticky; top:0; z-index:20; background:rgba(255,255,255,.95); backdrop-filter:saturate(160%) blur(8px); border-bottom:1px solid var(--border); }
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .brand img{ height:44px; width:auto; }
+    .nav-links{ display:none; gap:22px; }
+    .nav-links a{ color:var(--asphalt); font-weight:600; }
+    .nav-links a:hover{ color:var(--blue); text-decoration:none; }
+    .menu-btn{ display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid var(--border); border-radius:14px; background:#fff; }
+    @media (min-width: 960px){ .nav-links{ display:flex; } .menu-btn{ display:none; } }
+
+    /* Mobile drawer */
+    .drawer{ display:none; border-top:1px solid var(--border); background:#fff; }
+    .drawer.open{ display:block; }
+    .drawer a{ display:block; padding:14px 0; border-bottom:1px solid var(--border); color:var(--asphalt); font-weight:600; }
+
+    /* ============================
+       HERO (logo-first)
+       ============================ */
+    .hero{ background:var(--blue); color:#fff; text-align:center; position:relative; overflow:hidden; }
+    .hero-inner{ padding:100px 16px 110px; }
+    .hero img{ max-width:360px; margin:0 auto 26px; filter:drop-shadow(0 14px 30px rgba(0,0,0,.35)); }
+    .hero h1{ font-size:clamp(26px,4.2vw,42px); font-weight:800; line-height:1.25; margin:0 auto 24px; max-width:900px; letter-spacing:-.2px; }
+    .hero .buttons{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+    /* ============================
+       TRUST STRIP (rounded pills)
+       ============================ */
+    .trust{ background:#f7f9fb; padding:26px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .trust .items{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+
+    /* ============================
+       SERVICES (rounded cards)
+       ============================ */
+    .services-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
+    .card{ border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:#fff; box-shadow:var(--shadow-sm); transition:transform .12s ease, box-shadow .2s ease; }
+    .card:hover{ transform:translateY(-3px); box-shadow:var(--shadow); }
+    .card .media{ position:relative; height:170px; background:#eef3f6; }
+    .card .media img{ width:100%; height:100%; object-fit:cover; }
+    .card h3{ margin:0; padding:16px 18px; color:var(--blue); font-size:18px; }
+
+    /* ============================
+       COVERAGE
+       ============================ */
+    .coverage-grid{ display:grid; gap:28px; align-items:center; }
+    .coverage-grid iframe{ width:100%; height:380px; border:0; border-radius:var(--radius); box-shadow:var(--shadow-sm); }
+    @media (min-width: 960px){ .coverage-grid{ grid-template-columns:1.1fr 1fr; } }
+
+    /* ============================
+       TECH & SAFETY (rounded list)
+       ============================ */
+    .tech{ background:#f7f9fb; }
+    .feature-list{ list-style:none; padding:0; margin:0; max-width:820px; margin-inline:auto; display:grid; gap:12px; }
+    .feature{ display:flex; align-items:center; gap:12px; background:#fff; padding:14px 16px; border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow-sm); }
+    .feature svg{ width:18px; height:18px; color:var(--red); flex:0 0 auto; }
+
+    /* ============================
+       GALLERY (rounded thumbs)
+       ============================ */
+    .gallery-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+    .gallery-grid img{ width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:16px; box-shadow:var(--shadow-sm); }
+
+    /* ============================
+       CONTACT (rounded cards)
+       ============================ */
+    .contact-grid{ display:grid; gap:24px; max-width:1000px; margin-inline:auto; align-items:start; }
+    .contact-card{ background:#fff; border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px; }
+    .contact-card form{ display:grid; gap:14px; }
+    label{ font-size:14px; font-weight:700; color:var(--blue); }
+    input, textarea{ width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:14px; font:inherit; }
+    button[type="submit"]{ background:var(--red); color:#fff; border:none; padding:12px 18px; border-radius:var(--radius-pill); font-weight:700; cursor:pointer; box-shadow:var(--shadow-sm); }
+    button[type="submit"]:hover{ opacity:.95; box-shadow:0 10px 20px rgba(183,28,28,.25); }
+    .contact-info{ text-align:center; color:var(--asphalt); }
+    @media (min-width: 960px){ .contact-grid{ grid-template-columns:1fr 1fr; } .contact-info{ text-align:left; } }
+
+    /* ============================
+       FOOTER
+       ============================ */
+    footer{ background:#fff; border-top:1px solid var(--border); }
+    .footer-grid{ display:grid; gap:24px; padding:30px 0; color:var(--asphalt); }
+    .footer-brand{ display:flex; align-items:center; gap:14px; }
+    .footer-brand img{ height:48px; }
+    .foot-note{ text-align:center; font-size:14px; padding:12px 0 28px; color:var(--asphalt); }
+    @media (min-width: 900px){ .footer-grid{ grid-template-columns:1.2fr .8fr .8fr; } }
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
+  <a href="#main" class="visually-hidden">Skip to content</a>
 
   <!-- HEADER -->
   <header role="banner">
     <div class="wrap nav" aria-label="Primary">
       <div class="brand">
-        <img src="Garufi_Trucking_Logo.png" alt="Garufi Trucking Corporation Logo" width="176" height="44" fetchpriority="high" decoding="async" />
+        <img src="Garufi_Trucking_Logo.png" alt="Garufi Trucking Corporation Logo" />
       </div>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
@@ -45,11 +156,11 @@
         <a href="#contact">Contact</a>
       </nav>
       <button id="menuBtn" class="menu-btn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <!-- hamburger icon -->
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
     </div>
-    <div id="backdrop" class="drawer-backdrop" hidden></div>
-    <div id="mobileMenu" class="drawer" role="dialog" aria-label="Mobile menu" aria-modal="true" hidden>
+    <div id="mobileMenu" class="drawer" role="dialog" aria-label="Mobile menu">
       <div class="wrap">
         <a href="#services">Services</a>
         <a href="#coverage">Coverage</a>
@@ -59,90 +170,86 @@
     </div>
   </header>
 
-  <main id="main" tabindex="-1">
-    <!-- HERO -->
-    <section class="hero" aria-label="Hero">
-      <div class="wrap hero-inner">
-        <img src="Garufi_Trucking_Logo.png" alt="Garufi Trucking Logo" width="720" height="240" decoding="async" />
-        <h1>We exist to help our customers grow by providing dependable freight solutions backed by family values, professional drivers, and a commitment to safety.</h1>
-        <div class="buttons" style="margin-top:18px;">
-          <a href="#contact" class="btn btn-primary">Request a Quote</a>
-          <a href="tel:13473863656" class="btn btn-secondary" aria-label="Call Dispatch at 347-386-3656">Call Dispatch (347) 386-3656</a>
-        </div>
+  <!-- HERO -->
+  <section class="hero" id="home" role="region" aria-label="Hero">
+    <div class="wrap hero-inner">
+      <img src="Garufi_Trucking_Logo.png" alt="Garufi Trucking Logo" />
+      <h1 id="main">We exist to help our customers grow by providing dependable freight solutions backed by family values, professional drivers, and a commitment to safety.</h1>
+      <div class="buttons" style="margin-top:18px;">
+        <a href="#contact" class="btn btn-primary">Request a Quote</a>
+        <a href="tel:5555555555" class="btn btn-secondary">Call Dispatch (555) 555-5555</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- TRUST STRIP -->
-    <section class="trust" aria-label="Trust & Compliance">
-      <div class="wrap items">
-        <span class="chip" title="USDOT Number">USDOT: 860985</span>
-        <span class="chip" title="MC Number">MC: 674156</span>
-        <span class="chip" title="Insurance">COI Available</span>
-        <span class="chip" title="Years in business">Family‑Owned 25+ Years</span>
+  <!-- TRUST STRIP -->
+  <section class="trust" aria-label="Trust & Compliance">
+    <div class="wrap items">
+      <span class="chip" title="USDOT Number"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> USDOT: 0000000</span>
+      <span class="chip" title="MC Number"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 12H8"/></svg> MC: 000000</span>
+      <span class="chip" title="Insurance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/></svg> COI Available</span>
+      <span class="chip" title="Years in business"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Family‑Owned 3+ Years</span>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" aria-label="Core Services">
+    <div class="wrap">
+      <h2>Core Services</h2>
+      <p class="sub">Capacity you can count on — FTL, LTL, Refrigerated, and Expedited options tailored to your lanes.</p>
+      <div class="services-grid">
+        <article class="card">
+          <div class="media"><img src="ftl-placeholder.jpg" alt="Dry van truck on highway"></div>
+          <h3>FTL (Dry Van)</h3>
+        </article>
+        <article class="card">
+          <div class="media"><img src="ltl-placeholder.jpg" alt="LTL freight at dock"></div>
+          <h3>LTL & Consolidation</h3>
+        </article>
+        <article class="card">
+          <div class="media"><img src="reefer-placeholder.jpg" alt="Refrigerated trailer"></div>
+          <h3>Refrigerated</h3>
+        </article>
+        <article class="card">
+          <div class="media"><img src="expedited-placeholder.jpg" alt="Expedited night run"></div>
+          <h3>Expedited</h3>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SERVICES, COVERAGE, TECH, GALLERY, CONTACT remain same except logos not needed -->
-
-    <!-- FOOTER -->
-    <footer role="contentinfo">
-      <div class="wrap footer-grid">
-        <div class="footer-brand">
-          <img src="Garufi_Trucking_Logo.png" alt="Garufi Trucking Corporation Logo" width="192" height="48" loading="lazy" decoding="async">
-          <div>
-            <div style="font-weight:800;color:var(--blue);">Garufi Trucking Corporation</div>
-            <div>Family‑owned carrier helping shippers move freight with confidence.</div>
-          </div>
-        </div>
-        <div>
-          <div style="font-weight:800;color:var(--blue); margin-bottom:8px;">Company</div>
-          <div><a href="#services">Services</a></div>
-          <div><a href="#coverage">Coverage</a></div>
-          <div><a href="#tech">Technology</a></div>
-          <div><a href="#contact">Contact</a></div>
-        </div>
-        <div>
-          <div style="font-weight:800;color:var(--blue); margin-bottom:8px;">Compliance</div>
-          <div>USDOT: 860985</div>
-          <div>MC: 674156</div>
-          <div>Insurance: COI on request</div>
-        </div>
+  <!-- COVERAGE -->
+  <section id="coverage" aria-label="Coverage">
+    <div class="wrap coverage-grid">
+      <div>
+        <h2>Primary Coverage</h2>
+        <p class="sub">Northeast & Midwest, with national reach via partners.</p>
       </div>
-      <div class="foot-note">© <span id="year"></span> Garufi Trucking Corporation. All rights reserved.</div>
-    </footer>
-  </main>
+      <iframe title="Service Area Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114768.30968833636!2d-77.73793015!3d43.1572857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d6b4b0f4f5e0d7%3A0xc9d8f63fd1d8cfe!2sRochester%2C%20NY!5e0!3m2!1sen!2sus!4v1684767720000!5m2!1sen!2sus" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Garufi Trucking Corp",
-    "url": "https://example.com/",
-    "logo": "https://example.com/Garufi_Trucking_Logo.png",
-    "foundingDate": "2000-03-07",
-    "areaServed": ["US-Northeast", "US-Midwest"],
-    "telephone": "+1-347-386-3656",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "18 Pine Ridge Dr",
-      "addressLocality": "Hopewell Junction",
-      "addressRegion": "NY",
-      "postalCode": "12533",
-      "addressCountry": "US"
-    },
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+1-347-386-3656",
-      "contactType": "customer support",
-      "areaServed": "US",
-      "availableLanguage": ["English"]
-    }]
-  }
-  </script>
+  <!-- TECH & SAFETY -->
+  <section id="tech" class="tech" aria-label="Technology & Safety">
+    <div class="wrap">
+      <h2>Technology & Tracking</h2>
+      <p class="sub">Fewer surprises, clearer ETAs, and documents when you need them.</p>
+      <ul class="feature-list">
+        <li class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Live GPS/ELD + Geofencing</li>
+        <li class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>POD/BOL on Delivery</li>
+        <li class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Appointment & ETA Automation</li>
+        <li class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>API/EDI‑Ready Integrations</li>
+      </ul>
+    </div>
+  </section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  <!-- GALLERY -->
+  <section aria-label="Gallery">
+    <div class="wrap">
+      <h2>In the Field</h2>
+      <div class="gallery-grid">
+        <img src="gallery1-placeholder.jpg" alt="Truck photo 1">
+        <img src="gallery2-placeholder.jpg" alt="Truck photo 2">
+        <img src="gallery3-placeholder.jpg" alt="Truck photo 3">
+        <img src="gallery4-placeholder.jpg" alt="Truck photo 4">
+      </div>
